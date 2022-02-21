@@ -1,0 +1,21 @@
+format: jb-book
+root: docs/intro.md
+parts:
+  - caption: Toolkit
+    chapters:
+    - file: docs/programming-toolkit.ipynb
+  - caption: Basics
+    chapters:
+    - file: docs/basics.ipynb
+    - file: docs/modules.ipynb 
+    - file: docs/syntax.ipynb
+    - file: docs/semantics.ipynb
+  - caption: Strings
+    chapters:
+    - file: docs/regex.ipynb   
+  - caption: Jupyter
+    chapters:
+    - file: docs/ipython.ipynb
+  - caption: References
+    chapters:
+    - file: docs/reference.md
