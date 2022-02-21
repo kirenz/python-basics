@@ -6,6 +6,9 @@ This section contains an overview about the programming toolkit you will need fo
 
 Python is an object-oriented language (an object is an entity that contains data along with associated metadata and/or functionality). One thing that distinguishes Python from other programming languages is that it is interpreted rather than compiled. This means that it is executed line by line which is particular useful for data analysis, as well as the creation of interactive, executable documents like Jupyter Notebooks.
 
+- Python is an interpreted language.
+- The Python interpreter runs a program by executing one statement at a time.
+
 On top of this, there is a broad ecosystem of third-party tools and modules that offer more specialized data science functionality.
 
 ## Jupyter Notebook
