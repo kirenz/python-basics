@@ -1,4 +1,4 @@
-# Python basics
+# Welcome
 
 This short tutorial is a very brief exploration of the essential features of Python. 
 
