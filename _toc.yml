@@ -8,6 +8,8 @@ parts:
     chapters:
     - file: docs/basics.ipynb
     - file: docs/modules.ipynb 
+    - file: docs/numpy.ipynb 
+    - file: docs/scikit-learn.ipynb  
     - file: docs/syntax.ipynb
     - file: docs/semantics.ipynb
   - caption: Strings

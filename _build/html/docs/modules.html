@@ -52,7 +52,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Syntax" href="syntax.html" />
+    <link rel="next" title="NumPy" href="numpy.html" />
     <link rel="prev" title="First steps" href="basics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -87,7 +87,7 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
@@ -123,6 +123,16 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy.html">
+   NumPy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scikit-learn.html">
+   Scikit-learn
   </a>
  </li>
  <li class="toctree-l1">
@@ -196,8 +206,8 @@
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
-                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -205,7 +215,7 @@
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
@@ -213,10 +223,10 @@
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../_sources/docs/modules.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
@@ -229,12 +239,12 @@
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
             href="https://github.com/kirenz/python-basics"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Quell-Repository"><i
-                    class="fab fa-github"></i>Repository</button></a>
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
             href="https://github.com/kirenz/python-basics/issues/new?title=Issue%20on%20page%20%2Fdocs/modules.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Öffnen Sie ein Problem"><i class="fas fa-lightbulb"></i>offenes Thema</button></a>
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
     </div>
 </div>
@@ -242,8 +252,8 @@
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
-        title="Vollbildmodus"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -256,7 +266,7 @@
         
         
         <a class="colab-button" href="https://colab.research.google.com/github/kirenz/python-basics/blob/main/docs/modules.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Starten Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
@@ -270,10 +280,20 @@
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Inhalt
+                <i class="fas fa-list"></i> Contents
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#built-in-modules">
+   Built-in modules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#important-modules">
+   Important modules
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#import-modules">
    Import modules
@@ -297,23 +317,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#implicit-import">
      Implicit import
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#built-in-modules">
-   Built-in modules
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#important-modules">
-   Important modules
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numpy">
-     NumPy
     </a>
    </li>
   </ul>
@@ -334,10 +337,20 @@
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Inhalt </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#built-in-modules">
+   Built-in modules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#important-modules">
+   Important modules
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#import-modules">
    Import modules
@@ -361,23 +374,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#implicit-import">
      Implicit import
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#built-in-modules">
-   Built-in modules
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#important-modules">
-   Important modules
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numpy">
-     NumPy
     </a>
    </li>
   </ul>
@@ -400,6 +396,36 @@
 <p>Python modules are a set of useful functions that eliminate the need for writing codes from scratch.</p>
 </div>
 <p>A Python module is a reusable chunk of code that you can import in your own projects so you don’t have to write all the code by yourself. There are around 140000 available Python projects and one way to discover and install them is to use the <a class="reference external" href="https://pypi.org/">Python Package Index (PyPI)</a>. Note that we will use another way to install Python modules since we work with the open source data science platform Anaconda (as a general rule, you shouldn’t use PyPI in Anaconda).</p>
+<div class="section" id="built-in-modules">
+<h2>Built-in modules<a class="headerlink" href="#built-in-modules" title="Permalink to this headline">¶</a></h2>
+<p>Python’s standard library contains many useful built-in modules, which you can read about fully in Python’s documentation. Any of these can be imported with the import statement. Here is a short list of some of the modules you might wish to explore and learn about:</p>
+<ul class="simple">
+<li><p>os and sys: Tools for interfacing with the operating system, including navigating file directory structures and executing shell commands</p></li>
+<li><p>math and cmath: Mathematical functions and operations on real and complex numbers</p></li>
+<li><p>itertools: Tools for constructing and interacting with iterators and generators</p></li>
+<li><p>functools: Tools that assist with functional programming</p></li>
+<li><p>random: Tools for generating pseudorandom numbers</p></li>
+<li><p>pickle: Tools for object persistence: saving objects to and loading objects from disk</p></li>
+<li><p>json and csv: Tools for reading JSON-formatted and CSV-formatted files.</p></li>
+<li><p>urllib: Tools for doing HTTP and other web requests.</p></li>
+</ul>
+<p>You can find information on these, and many more, in the Python standard library documentation: <a class="reference external" href="https://docs.python.org/3/library/">https://docs.python.org/3/library/</a>.</p>
+</div>
+<div class="section" id="important-modules">
+<h2>Important modules<a class="headerlink" href="#important-modules" title="Permalink to this headline">¶</a></h2>
+<p>Here a list of some of the modules we will use frequently:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pandas.pydata.org/">pandas</a> is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool. We will use pandas regularly in our course and you will find all relevant content in this <span class="xref myst">introduction to pandas</span></p></li>
+<li><p><a class="reference external" href="https://numpy.org/">NumPy</a> offers tools for scientific computing like mathematical functions and random number generators.</p></li>
+<li><p><a class="reference external" href="https://scipy.org/">SciPy</a> contains algorithms for scientific computing.</p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/">matplotlib</a> is a library for creating data visualizations.</p></li>
+<li><p><a class="reference external" href="https://seaborn.pydata.org/">Seaborn</a> provides a high-level interface for drawing attractive and informative statistical graphics.</p></li>
+<li><p><a class="reference external" href="https://plotly.com/python/">plotly</a> is a graphing library to make interactive, publication-quality graphs.</p></li>
+<li><p><a class="reference external" href="https://www.statsmodels.org/stable/index.html">statsmodels</a> includes statistical models, hypothesis tests, and data exploration.</p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/">scikit-learn</a> provides a toolkit for applying common machine learning algorithms to data.</p></li>
+<li><p><a class="reference external" href="https://www.tensorflow.org/">TensorFlow</a> is an end-to-end open source platform for machine learning.</p></li>
+</ul>
+</div>
 <div class="section" id="import-modules">
 <h2>Import modules<a class="headerlink" href="#import-modules" title="Permalink to this headline">¶</a></h2>
 <p>For loading built-in and third-party modules, Python provides the import statement. There are a few ways to use the statement, which we will briefly mention in this chapter, from most recommended to least recommended.</p>
@@ -439,109 +465,6 @@
 <p>This pattern should be used sparingly, if at all. The problem is that such imports can sometimes overwrite function names that you do not intend to overwrite, and the implicitness of the statement makes it difficult to determine what has changed.</p>
 </div>
 </div>
-<div class="section" id="built-in-modules">
-<h2>Built-in modules<a class="headerlink" href="#built-in-modules" title="Permalink to this headline">¶</a></h2>
-<p>Python’s standard library contains many useful built-in modules, which you can read about fully in Python’s documentation. Any of these can be imported with the import statement. Here is a short list of some of the modules you might wish to explore and learn about:</p>
-<ul class="simple">
-<li><p>os and sys: Tools for interfacing with the operating system, including navigating file directory structures and executing shell commands</p></li>
-<li><p>math and cmath: Mathematical functions and operations on real and complex numbers</p></li>
-<li><p>itertools: Tools for constructing and interacting with iterators and generators</p></li>
-<li><p>functools: Tools that assist with functional programming</p></li>
-<li><p>random: Tools for generating pseudorandom numbers</p></li>
-<li><p>pickle: Tools for object persistence: saving objects to and loading objects from disk</p></li>
-<li><p>json and csv: Tools for reading JSON-formatted and CSV-formatted files.</p></li>
-<li><p>urllib: Tools for doing HTTP and other web requests.</p></li>
-</ul>
-<p>You can find information on these, and many more, in the Python standard library documentation: <a class="reference external" href="https://docs.python.org/3/library/">https://docs.python.org/3/library/</a>.</p>
-</div>
-<div class="section" id="important-modules">
-<h2>Important modules<a class="headerlink" href="#important-modules" title="Permalink to this headline">¶</a></h2>
-<p>Here a list of some of the modules we will use frequently:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://pandas.pydata.org/">pandas</a> is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool. We will use pandas regularly in our course and you will find all relevant content in this <span class="xref myst">introduction to pandas</span></p></li>
-<li><p><a class="reference external" href="https://numpy.org/">NumPy</a> offers tools for scientific computing like mathematical functions and random number generators.</p></li>
-<li><p><a class="reference external" href="https://scipy.org/">SciPy</a> contains algorithms for scientific computing.</p></li>
-<li><p><a class="reference external" href="https://matplotlib.org/">matplotlib</a> is a library for creating data visualizations.</p></li>
-<li><p><a class="reference external" href="https://seaborn.pydata.org/">Seaborn</a> provides a high-level interface for drawing attractive and informative statistical graphics.</p></li>
-<li><p><a class="reference external" href="https://plotly.com/python/">plotly</a> is a graphing library to make interactive, publication-quality graphs.</p></li>
-<li><p><a class="reference external" href="https://www.statsmodels.org/stable/index.html">statsmodels</a> includes statistical models, hypothesis tests, and data exploration.</p></li>
-<li><p><a class="reference external" href="https://scikit-learn.org/stable/">scikit-learn</a> provides a toolkit for applying common machine learning algorithms to data.</p></li>
-<li><p><a class="reference external" href="https://www.tensorflow.org/">TensorFlow</a> is an end-to-end open source platform for machine learning.</p></li>
-</ul>
-<div class="section" id="numpy">
-<h3>NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h3>
-<p>As an example, we take a closer look at NumPy (numerical Python), which provides an efficient way to store and manipulate multi-dimensional dense arrays in Python.</p>
-<p>The important features of NumPy are:</p>
-<ul class="simple">
-<li><p>It allows efficient storage and manipulation of vectors, matrices, and higher-dimensional datasets.</p></li>
-<li><p>It provides a readable and efficient syntax for operating on this data, from simple element-wise arithmetic to more complicated linear algebraic operations.</p></li>
-</ul>
-<p>In the simplest case, NumPy arrays look a lot like Python lists. For example, here is an array containing the range of numbers 1 to 9 (compare this with Python’s built-in range()):</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">x</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3, 4, 5, 6, 7, 8, 9])
-</pre></div>
-</div>
-</div>
-</div>
-<p>NumPy’s arrays offer both efficient storage of data, as well as efficient element-wise operations on the data. For example, to square each element of the array, we can apply the “**” operator to the array directly:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1,  4,  9, 16, 25, 36, 49, 64, 81])
-</pre></div>
-</div>
-</div>
-</div>
-<p>Compare this with the much more verbose Python-style list comprehension for the same result:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="p">[</span><span class="n">val</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 4, 9, 16, 25, 36, 49, 64, 81]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Unlike Python lists (which are limited to one dimension), NumPy arrays can be multi-dimensional. A 2-dimensional array of size 2 x 3, composed of 4-byte integer elements:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]],</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Type:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="s2">&quot;Shape:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="s2">&quot;Data Type:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-
-<span class="c1">#x.shape</span>
-
-<span class="c1">#x.dtype</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type: &lt;class &#39;numpy.ndarray&#39;&gt; 
-Shape: (2, 3) 
-Data Type: int32
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -576,10 +499,10 @@ Data Type: int32
             <p class="prev-next-title">First steps</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="syntax.html" title="next page">
+    <a class='right-next' id="next-link" href="numpy.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Syntax</p>
+        <p class="prev-next-title">NumPy</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -590,9 +513,9 @@ Data Type: int32
     <footer class="footer">
   <p>
     
-      Durch Jan Kirenz<br/>
+      By Jan Kirenz<br/>
     
-        &copy; Urheberrechte © 2021.<br/>
+        &copy; Copyright 2021.<br/>
   </p>
 </footer>
 </main>
