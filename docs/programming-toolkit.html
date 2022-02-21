@@ -389,11 +389,11 @@
 </div>
 <div class="section" id="jupyter-notebook">
 <h2>Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://jupyter.org/">Jupyter Notebook</a> is an open-source web application that allows you to create and share documents that contain code, equations, visualizations and narrative text.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Jupyter Notebook is a web-based interactive computational environment for creating documents that contain code and text</p>
 </div>
-<p><a class="reference external" href="https://jupyter.org/">Jupyter Notebook</a> is an open-source web application that allows you to create and share documents that contain code, equations, visualizations and narrative text:</p>
 <ul class="simple">
 <li><p>A notebook is basically a list of cells</p></li>
 <li><p>Cells contain either</p>
@@ -446,20 +446,20 @@
 </div>
 <div class="section" id="anaconda">
 <h2>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this headline">¶</a></h2>
+<p>The open-source <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a> Individual Edition Distribution is on of the easiest ways to perform Python and R data science and machine learning since it already includes Python and the most important modules we need.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Anaconda is a data science toolkit which already includes most of the data science modules we need.</p>
 </div>
-<p>The open-source <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a> Individual Edition Distribution is on of the easiest ways to perform Python and R data science and machine learning since it already includes Python and the most important modules we need.</p>
 <p>Furthermore, Anaconda’s package manager <code class="docutils literal notranslate"><span class="pre">conda</span></code> makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called virtual environments). <code class="docutils literal notranslate"><span class="pre">conda</span></code> analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2,0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done.</p>
 <div class="tip admonition">
 <p class="admonition-title">To do</p>
 <p>Install Anaconda Individual Edition</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://kirenz.github.io/codelabs/codelabs/anaconda-install/#0">Anaconda installation tutorial</a></p></li>
+<li><p><a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda installation</a></p></li>
 </ul>
 </div>
-<p>Here an example of how to install the Python moduke seaborn using <code class="docutils literal notranslate"><span class="pre">conda</span></code>:</p>
+<p>Here some examples of how to install or update Python modules by using <code class="docutils literal notranslate"><span class="pre">conda</span></code>:</p>
 <ul class="simple">
 <li><p>On <em>Windows</em> open the Start menu and open an Anaconda Command Prompt.</p></li>
 <li><p>On <em>macOS</em> or <em>Linux</em> open a terminal window.</p></li>
@@ -469,9 +469,15 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Install seaborn according to the <a class="reference external" href="https://anaconda.org/anaconda/seaborn">documentation</a></p></li>
+<li><p>Update Anaconda (this will update all packages in the current environment to the latest version):</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c anaconda seaborn
+<div class="highlight-terminal notranslate"><div class="highlight"><pre><span></span>conda update --all
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Install scikit-learn <a class="reference external" href="https://anaconda.org/anaconda/scikit-learn">see conda documentation</a></p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c anaconda scikit-learn
 </pre></div>
 </div>
 </div>
@@ -504,7 +510,6 @@
 <ul class="simple">
 <li><p><a class="reference external" href="https://code.visualstudio.com/docs/datascience/jupyter-notebooks">How to use Jupyter Notebooks in VS Code</a></p></li>
 <li><p><a class="reference external" href="https://code.visualstudio.com/docs/datascience/data-science-tutorial">Data Science in VS Code tutorial</a></p></li>
-<li><p><a class="reference external" href="https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_debug-a-jupyter-notebook">Debug a Jupyter Notebook</a></p></li>
 </ul>
 </div>
 <p>If you have troubles to use Anaconda in Visual Studio Code, follow these instructions:</p>

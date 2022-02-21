@@ -13,11 +13,11 @@ On top of this, there is a broad ecosystem of third-party tools and modules that
 
 ## Jupyter Notebook
 
+[Jupyter Notebook](https://jupyter.org/) is an open-source web application that allows you to create and share documents that contain code, equations, visualizations and narrative text.
+
 :::{note}
 Jupyter Notebook is a web-based interactive computational environment for creating documents that contain code and text
 :::
-
-[Jupyter Notebook](https://jupyter.org/) is an open-source web application that allows you to create and share documents that contain code, equations, visualizations and narrative text:
 
 - A notebook is basically a list of cells
 - Cells contain either
@@ -25,7 +25,6 @@ Jupyter Notebook is a web-based interactive computational environment for creati
   - executable code and its
   - output
   
-
 ## Colab
 
 :::{note}
@@ -70,14 +69,13 @@ Review this sites to learn more about Markdown:
 - [Interactive 10 minute Markdown tutorial](https://commonmark.org/help/)
 ```
 
-
 ## Anaconda
+
+The open-source [Anaconda](https://www.anaconda.com/products/individual) Individual Edition Distribution is on of the easiest ways to perform Python and R data science and machine learning since it already includes Python and the most important modules we need. 
 
 :::{note}
 Anaconda is a data science toolkit which already includes most of the data science modules we need.
 :::
-
-The open-source [Anaconda](https://www.anaconda.com/products/individual) Individual Edition Distribution is on of the easiest ways to perform Python and R data science and machine learning since it already includes Python and the most important modules we need. 
 
  Furthermore, Anaconda's package manager `conda` makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called virtual environments). `conda` analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2,0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done.
 
@@ -87,10 +85,10 @@ The open-source [Anaconda](https://www.anaconda.com/products/individual) Individ
 
 Install Anaconda Individual Edition
 
-- [Anaconda installation tutorial](https://kirenz.github.io/codelabs/codelabs/anaconda-install/#0)
+- [Anaconda installation](https://www.anaconda.com/products/individual)
 ```
 
-Here an example of how to install the Python moduke seaborn using `conda`:
+Here some examples of how to install or update Python modules by using `conda`:
 
 - On *Windows* open the Start menu and open an Anaconda Command Prompt. 
 - On *macOS* or *Linux* open a terminal window.
@@ -100,10 +98,16 @@ Here an example of how to install the Python moduke seaborn using `conda`:
 conda activate base
 ```
 
-- Install seaborn according to the [documentation](https://anaconda.org/anaconda/seaborn)
+- Update Anaconda (this will update all packages in the current environment to the latest version):
+
+```terminal
+conda update --all
+```
+
+- Install scikit-learn [see conda documentation](https://anaconda.org/anaconda/scikit-learn)
 
 ```bash
-conda install -c anaconda seaborn
+conda install -c anaconda scikit-learn
 ```
 
 ## Visual Studio Code 
@@ -142,16 +146,12 @@ Learn how to use Jupyter Notebooks:
 
 - [Data Science in VS Code tutorial](https://code.visualstudio.com/docs/datascience/data-science-tutorial)
 
-- [Debug a Jupyter Notebook](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_debug-a-jupyter-notebook)
-
 ```
-
 
 If you have troubles to use Anaconda in Visual Studio Code, follow these instructions: 
 
 - [Windows](https://stackoverflow.com/a/61937090/14796848)
 - [Mac](https://stackoverflow.com/a/55203534/14796848)
-
 
 Additional VS Code options:
 
