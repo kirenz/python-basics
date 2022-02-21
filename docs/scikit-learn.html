@@ -55,6 +55,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Syntax" href="syntax.html" />
+    <link rel="prev" title="NumPy" href="numpy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -115,7 +117,7 @@
   Basics
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="basics.html">
    First steps
@@ -124,6 +126,16 @@
  <li class="toctree-l1">
   <a class="reference internal" href="modules.html">
    Modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy.html">
+   NumPy
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Scikit-learn
   </a>
  </li>
  <li class="toctree-l1">
@@ -270,6 +282,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#important-methods">
+   Important methods
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -282,6 +307,19 @@
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#important-methods">
+   Important methods
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -296,9 +334,33 @@
 <li><p>Built on NumPy, SciPy, and matplotlib</p></li>
 </ul>
 <p>Scikit-learn provides dozens of built-in machine learning algorithms and models, called <strong>estimators</strong>. Each estimator can be fitted to some data using its fit method.</p>
+<p>Let’s create some simple data with two classes (0 and 1) and 3 features to demonstrate the usage of some classification algorithms:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>class</p></th>
+<th class="head"><p>feature 1</p></th>
+<th class="head"><p>feature 2</p></th>
+<th class="head"><p>feature 3</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>11</p></td>
+<td><p>12</p></td>
+<td><p>13</p></td>
+</tr>
+</tbody>
+</table>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="p">[[</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>  <span class="c1"># 2 samples, 3 features</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create data</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="p">[[</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>  <span class="c1"># 2 samples, 3 features</span>
      <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">]]</span>
 
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># classes of each sample</span>
@@ -313,12 +375,13 @@
 </div>
 </div>
 </div>
+<p>Here is an example where we fit a <code class="docutils literal notranslate"><span class="pre">RandomForestClassifier</span></code> to our very basic data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
-<span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># create estimator and call it clf</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># fit estimator to our data</span>
 </pre></div>
 </div>
 </div>
@@ -328,36 +391,134 @@
 </div>
 </div>
 </div>
-<p>The fit method generally accepts 2 inputs:</p>
+<p>The <strong>fit</strong> method generally accepts 2 inputs:</p>
+<p>The samples matrix (or design matrix) <em>X</em>:</p>
 <ul class="simple">
-<li><p>The samples matrix (or design matrix) X. The size of X is typically (n_samples, n_features), which means that samples are represented as rows and features are represented as columns.</p></li>
+<li><p>The size of X is typically (n_samples, n_features)</p></li>
+<li><p>samples are represented as rows and features are represented as columns.</p></li>
 </ul>
-<p>The target values y which are real numbers for regression tasks, or integers for classification (or any other discrete set of values). For unsupervized learning tasks, y does not need to be specified. y is usually 1d array where the i th entry corresponds to the target of the i th sample (row) of X.</p>
-<p>Both X and y are usually expected to be numpy arrays or equivalent array-like data types, though some estimators work with other formats such as sparse matrices.</p>
+<p>The target values <em>y</em> which are:</p>
+<ul class="simple">
+<li><p>real numbers for regression tasks</p></li>
+<li><p>integers for classification (or any other discrete set of values)</p></li>
+<li><p>For unsupervized learning tasks, y does not need to be specified.</p></li>
+</ul>
+<p>y is usually 1d array where the i th entry corresponds to the target of the i th sample (row) of X.</p>
+<p>Both X and y are usually expected to be <em>numpy</em> arrays or equivalent array-like data types, though some estimators work with other formats such as sparse matrices.</p>
 <p>Once the estimator is fitted, it can be used for predicting target values of new data. You don’t need to re-train the estimator:</p>
-<blockquote>
-<div><blockquote>
-<div></div></blockquote>
-</div></blockquote>
-<p>Given a scikit-learn estimator object named <code class="docutils literal notranslate"><span class="pre">model</span></code>, the following methods are available:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>  <span class="c1"># predict classes of the training data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">]])</span>  <span class="c1"># predict classes of new data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.7 , 0.3 ],
+       [0.22, 0.78]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Same procedure with different estimator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+
+<span class="n">clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.97545178, 0.02454822],
+       [0.02454858, 0.97545142]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="important-methods">
+<h2>Important methods<a class="headerlink" href="#important-methods" title="Permalink to this headline">¶</a></h2>
+<p>Given a scikit-learn estimator object, the following methods are available:</p>
 <p>Available in all estimators</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">model.fit()</span></code> : fit training data. For supervised learning applications, this accepts two arguments: the data X and the labels y (e.g. model.fit(X, y)). For unsupervised learning applications, this accepts only a single argument, the data X (e.g. model.fit(X)).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.fit()</span></code> : fit training data. For supervised learning applications, this accepts two arguments: the data X and the labels y (e.g. model.fit(X, y)). For unsupervised learning applications, this accepts only a single argument, the data X (e.g. model.fit(X)).</p></li>
 </ul>
 <p>Available in supervised estimators</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">model.predict()</span></code> : given a trained model, predict the label of a new set of data. This method accepts one argument, the new data X_new (e.g. model.predict(X_new)), and returns the learned label for each object in the array.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">model.predict_proba()</span></code> : For classification problems, some estimators also provide this method, which returns the probability that a new observation has each categorical label. In this case, the label with the highest probability is returned by model.predict().</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">model.score()</span></code> : for classification or regression problems, most (all?) estimators implement a score method. Scores are between 0 and 1, with a larger score indicating a better fit.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.predict()</span></code> : given a trained model, predict the label of a new set of data. This method accepts one argument, the new data X_new (e.g. model.predict(X_new)), and returns the learned label for each object in the array.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.predict_proba()</span></code> : For classification problems, some estimators also provide this method, which returns the probability that a new observation has each categorical label. In this case, the label with the highest probability is returned by model.predict().</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.score()</span></code> : for classification or regression problems, most estimators implement a score method. Scores are between 0 and 1, with a larger score indicating a better fit.</p></li>
 </ul>
 <p>Available in unsupervised estimators</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">model.predict()</span></code> : predict labels in clustering algorithms.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">model.transform()</span></code> : given an unsupervised model, transform new data into the new basis. This also accepts one argument X_new, and returns the new representation of the data based on the unsupervised model.
-model.fit_transform() : some estimators implement this method, which more efficiently performs a fit and a transform on the same input data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.predict()</span></code> : predict labels in clustering algorithms.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.transform()</span></code> : given an unsupervised model, transform new data into the new basis. This also accepts one argument X_new, and returns the new representation of the data based on the unsupervised model.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">model.fit_transform()</span></code> : some estimators implement this method, which more efficiently performs a fit and a transform on the same input data.</p></li>
 </ul>
-<p>This is a flow chart created by scikit-learn super-contributor Andreas Mueller which gives a nice summary of which algorithms to choose in various situations. Keep it around as a handy reference!</p>
-<p><a class="reference external" href="https://scikit-learn.org/stable/tutorial/machine_learning_map/">https://scikit-learn.org/stable/tutorial/machine_learning_map/</a></p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -384,7 +545,21 @@ model.fit_transform() : some estimators implement this method, which more effici
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="numpy.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">NumPy</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="syntax.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Syntax</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>
