@@ -4,17 +4,16 @@ parts:
   - caption: Toolkit
     chapters:
     - file: docs/programming-toolkit.ipynb
-  - caption: Basics
+  - caption: Programming
     chapters:
-    - file: docs/basics.ipynb
+    - file: docs/syntax.ipynb
+    - file: docs/semantics.ipynb
+    - file: docs/regex.ipynb   
+  - caption: Modules
+    chapters:
     - file: docs/modules.ipynb 
     - file: docs/numpy.ipynb 
     - file: docs/scikit-learn.ipynb  
-    - file: docs/syntax.ipynb
-    - file: docs/semantics.ipynb
-  - caption: Strings
-    chapters:
-    - file: docs/regex.ipynb   
   - caption: Jupyter
     chapters:
     - file: docs/ipython.ipynb
