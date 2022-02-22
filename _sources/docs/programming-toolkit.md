@@ -236,3 +236,21 @@ You need a free GitHub-account for our course. Please follow the instructions be
 
 - [Install GitHub desktop](https://desktop.github.com/)
 ```
+
+## Stackoverflow
+
+[Stackoverflow](https://stackoverflow.com/) is a public platform with a massive collection of coding questions & answers. So whenever you run into issues with your code, Stackoverlow is a great place to find answers!
+
+:::{Note}
+A community-based space to find and contribute answers to technical challenges.
+:::
+
+The website serves as a platform for users to ask and answer questions, and, through membership and active participation, to vote questions and answers up or down similar to [Reddit](https://www.reddit.com/) and edit questions and answers in a fashion similar to a wiki.
+
+## Stay up to data
+
+To stay up to date in Data Science, here two free weekly newsletters featuring curated news, articles and jobs related to Data Science:
+
+- [Data science weekly](https://www.datascienceweekly.org/)
+
+- [Data Elixir](https://dataelixir.com/)
