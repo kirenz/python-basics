@@ -2,32 +2,45 @@
 
 This section contains an overview about the programming toolkit you will need for our course. Please read the instructions and complete the tasks listed in the yellow *To do* boxes.
 
+```mermaid
+  graph TD;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
+```
+
 ## Python
 
 Python is an object-oriented language (an object is an entity that contains data along with associated metadata and/or functionality).
 
-One thing that distinguishes Python from other programming languages is that it is interpreted rather than compiled. This means that it is executed line by line which is particular useful for data analysis, as well as the creation of interactive, executable documents like Jupyter Notebooks.
+One thing that distinguishes Python from many other programming languages is that it is interpreted rather than compiled. This means that it is executed line by line which is particular useful for data analysis, as well as the creation of interactive, executable documents like Jupyter Notebooks.
 
 :::{Note}
 Python is an interpreted language. The Python interpreter runs a program by executing one statement at a time.
 :::
 
-On top of this, there is a broad ecosystem of third-party tools and modules that offer more specialized data science functionality.
+On top of this, there is a broad ecosystem of third-party tools and modules (like Jupyter Notebook) that offer more specialized data science functionality.
 
 ## Jupyter Notebook
 
-[Jupyter Notebook](https://jupyter.org/) is an open-source web application that allows you to create and share documents that contain code, equations, visualizations and narrative text.
+[Jupyter Notebook](https://jupyter.org/) is an open-source application that allows you to create and share documents that contain code, equations, visualizations and narrative text. 
 
-:::{note}
-Jupyter Notebook is a web-based interactive computational environment for creating documents that contain code and text
-:::
+```{image} ../_static/img/jupyter.png
+:alt: jupyter
+:class: bg-primary mb-1
+:width: 600px
+:align: center
+```
 
 A notebook is basically a list of cells and the cells contain either
 
 1. explanatory text (written in markdown)
 1. executable code
 1. code output
-  
+
+Note that we will use Jupyter Notebook inside the coding editor Visual Studio Code.
+
 ## Colab
 
 :::{note}
@@ -160,20 +173,16 @@ Additional VS Code options:
 
 - Pro tips: [25 VS Code Productivity Tips and Speed Hacks](https://www.youtube.com/watch?v=ifTF3ags0XI)
 
-How to configure native bracket pair colorization:
+How to configure [native bracket pair colorization](https://code.visualstudio.com/blogs/2021/09/29/bracket-pair-colorization):
 
-- Remove any existing Bracket Pair Colorizer extensions.
-- Update VS Code
+- Remove any existing Bracket Pair Colorizer extensions (if you have installed any).
 - Open your user settings: `CMD (CTRL for non-Mac users) + Shift + P` and type `settings`. 
-- Select `Open settings (JSON) 
+- Select `Open settings (JSON)
 - Add the following code:
 
 ```bash
 "editor.bracketPairColorization.enabled": true
-````
-
-- [More information about the native bracket pair colorization](https://code.visualstudio.com/blogs/2021/09/29/bracket-pair-colorization)
-
+```
 
 ## Command-line interface
 
