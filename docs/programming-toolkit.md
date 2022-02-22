@@ -244,7 +244,7 @@ You need a free GitHub-account for our course. Please follow the instructions be
   - Settings > Emails > Uncheck "Keep my email address private"
   - Settings > Emails > Update name and photo
 
-- [Install GitHub desktop](https://desktop.github.com/)
+- [Install GitHub desktop to synchronize your machine with GitHub](https://desktop.github.com/)
 ```
 
 ## Stackoverflow
