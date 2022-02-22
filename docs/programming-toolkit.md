@@ -140,9 +140,8 @@ Get familiar with Code
 
 Install Extensions:
 
-- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-- [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
-- [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+- [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+- [Jupyter extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) 
 
 Learn how to use Jupyter Notebooks:
 
