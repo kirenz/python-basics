@@ -397,29 +397,34 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="programming-toolkit">
 <h1>Programming toolkit<a class="headerlink" href="#programming-toolkit" title="Permalink to this headline">¶</a></h1>
 <p>This section contains an overview about the programming toolkit you will need for our course. Please read the instructions and complete the tasks listed in the yellow <em>To do</em> boxes.</p>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>  graph TD;
+      A--&gt;B;
+      A--&gt;C;
+      B--&gt;D;
+      C--&gt;D;
+</pre></div>
+</div>
 <div class="section" id="python">
 <h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
 <p>Python is an object-oriented language (an object is an entity that contains data along with associated metadata and/or functionality).</p>
-<p>One thing that distinguishes Python from other programming languages is that it is interpreted rather than compiled. This means that it is executed line by line which is particular useful for data analysis, as well as the creation of interactive, executable documents like Jupyter Notebooks.</p>
+<p>One thing that distinguishes Python from many other programming languages is that it is interpreted rather than compiled. This means that it is executed line by line which is particular useful for data analysis, as well as the creation of interactive, executable documents like Jupyter Notebooks.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Python is an interpreted language. The Python interpreter runs a program by executing one statement at a time.</p>
 </div>
-<p>On top of this, there is a broad ecosystem of third-party tools and modules that offer more specialized data science functionality.</p>
+<p>On top of this, there is a broad ecosystem of third-party tools and modules (like Jupyter Notebook) that offer more specialized data science functionality.</p>
 </div>
 <div class="section" id="jupyter-notebook">
 <h2>Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://jupyter.org/">Jupyter Notebook</a> is an open-source web application that allows you to create and share documents that contain code, equations, visualizations and narrative text.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Jupyter Notebook is a web-based interactive computational environment for creating documents that contain code and text</p>
-</div>
+<p><a class="reference external" href="https://jupyter.org/">Jupyter Notebook</a> is an open-source application that allows you to create and share documents that contain code, equations, visualizations and narrative text.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="../_images/jupyter.png"><img alt="jupyter" class="bg-primary mb-1 align-center" src="../_images/jupyter.png" style="width: 600px;" /></a>
 <p>A notebook is basically a list of cells and the cells contain either</p>
 <ol class="simple">
 <li><p>explanatory text (written in markdown)</p></li>
 <li><p>executable code</p></li>
 <li><p>code output</p></li>
 </ol>
+<p>Note that we will use Jupyter Notebook inside the coding editor Visual Studio Code.</p>
 </div>
 <div class="section" id="colab">
 <h2>Colab<a class="headerlink" href="#colab" title="Permalink to this headline">¶</a></h2>
@@ -533,10 +538,9 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="simple">
 <li><p>Pro tips: <a class="reference external" href="https://www.youtube.com/watch?v=ifTF3ags0XI">25 VS Code Productivity Tips and Speed Hacks</a></p></li>
 </ul>
-<p>How to configure native bracket pair colorization:</p>
+<p>How to configure <a class="reference external" href="https://code.visualstudio.com/blogs/2021/09/29/bracket-pair-colorization">native bracket pair colorization</a>:</p>
 <ul class="simple">
-<li><p>Remove any existing Bracket Pair Colorizer extensions.</p></li>
-<li><p>Update VS Code</p></li>
+<li><p>Remove any existing Bracket Pair Colorizer extensions (if you have installed any).</p></li>
 <li><p>Open your user settings: <code class="docutils literal notranslate"><span class="pre">CMD</span> <span class="pre">(CTRL</span> <span class="pre">for</span> <span class="pre">non-Mac</span> <span class="pre">users)</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">P</span></code> and type <code class="docutils literal notranslate"><span class="pre">settings</span></code>.</p></li>
 <li><p>Select `Open settings (JSON)</p></li>
 <li><p>Add the following code:</p></li>
@@ -544,9 +548,6 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;editor.bracketPairColorization.enabled&quot;</span>: <span class="nb">true</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p><a class="reference external" href="https://code.visualstudio.com/blogs/2021/09/29/bracket-pair-colorization">More information about the native bracket pair colorization</a></p></li>
-</ul>
 </div>
 <div class="section" id="command-line-interface">
 <h2>Command-line interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h2>
