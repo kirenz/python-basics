@@ -19,12 +19,16 @@ On top of this, there is a broad ecosystem of third-party tools and modules (lik
 
 [Jupyter Notebook](https://jupyter.org/) is an open-source application that allows you to create and share documents that contain code, equations, visualizations and narrative text. 
 
+<br>
+
 ```{image} ../_static/img/jupyter.png
 :alt: jupyter
 :class: bg-primary mb-1
-:width: 600px
+:width: 150px
 :align: center
 ```
+
+<br>
 
 A notebook is basically a list of cells and the cells contain either
 
@@ -36,11 +40,11 @@ Note that we will use Jupyter Notebook inside the coding editor Visual Studio Co
 
 ## Colab
 
+Colaboratory, or “Colab” for short, is a free to use product from Google Research. Colab allows anybody to write and execute python code through the browser, and is especially well suited to perform data analysis and machine learning.
+
 :::{note}
 Colab is a free Jupyter notebook environment that requires no setup, and runs entirely on the Cloud.
 :::
-
-Colaboratory, or “Colab” for short, is a free to use product from Google Research. Colab allows anybody to write and execute python code through the browser, and is especially well suited to perform data analysis and machine learning.
 
 Watch this video to get a first impression of Colab:
 
@@ -55,11 +59,11 @@ Let`s start your first Colab notebook to get an overview about some basic featur
 
 ## Markdown
 
+Markdown is one of the world’s most popular markup languages used in data science. Jupyter Notebooks use Markdown to provide an unified authoring framework for data science, combining code, its results, and commentary in Markdown. 
+
 :::{note}
 Markdown is a simple way to format text that looks great on any device.
 :::
-
-Markdown is one of the world’s most popular markup languages used in data science. Jupyter Notebooks use Markdown to provide an unified authoring framework for data science, combining code, its results, and commentary in Markdown.  
 
 According to {cite:t}`Wickham2016`, Markdown files are designed to be used in three ways:
 
@@ -80,16 +84,15 @@ Review this sites to learn more about Markdown:
 
 ## Anaconda
 
-The open-source [Anaconda](https://www.anaconda.com/products/individual) Individual Edition Distribution is on of the easiest ways to perform Python and R data science and machine learning since it already includes Python and the most important modules we need. 
+The open-source [Anaconda](https://www.anaconda.com/products/individual) Individual Edition Distribution is one of the easiest ways to perform Python data science projects since it already includes Python and the most important modules we need. 
 
 :::{note}
 Anaconda is a data science toolkit which already includes most of the data science modules we need.
 :::
 
- Furthermore, Anaconda's package manager `conda` makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called virtual environments). 
+Furthermore, Anaconda's package manager `conda` makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called virtual environments). 
  
- `conda` analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2,0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done.
-
+`conda` analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2,0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done.
 
 ```{admonition} To do
 :class: tip
@@ -117,7 +120,7 @@ If you want to update Anaconda (this will update all packages in the current env
 conda update --all
 ```
 
-If you want to install new modules, always use conda (not pip). Here is an example of how to install scikit-learn [see conda documentation](https://anaconda.org/anaconda/scikit-learn)
+If you want to install new modules, always use conda (and not the package installer for Python: [pip](https://pypi.org/project/pip/)). Here is an example of how to install scikit-learn [see conda documentation](https://anaconda.org/anaconda/scikit-learn)
 
 ```bash
 conda install -c anaconda scikit-learn
@@ -125,13 +128,17 @@ conda install -c anaconda scikit-learn
 
 ## Visual Studio Code 
 
+Visual Studio Code (also called Code) is a powerful source code editor which runs on your desktop and is available for Windows, macOS and Linux. It comes with a rich ecosystem of extensions for Python and we use them to write our Python code.
+
 :::{note}
 Visual Studio Code is a code editor that can be used with a variety of programming languages including Python.
 :::
 
+<br>
+
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/KMxo3T_MTvY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Visual Studio Code (also called Code) is a powerful source code editor which runs on your desktop and is available for Windows, macOS and Linux. It comes with a rich ecosystem of extensions for Python and we use them to write our Python code.
+<br>
 
 ```{admonition} To do
 :class: tip
@@ -154,7 +161,6 @@ Learn how to use Jupyter Notebooks:
 - [How to use Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)
 
 - [Data Science in VS Code tutorial](https://code.visualstudio.com/docs/datascience/data-science-tutorial)
-
 ```
 
 If you have troubles to use Anaconda in Visual Studio Code, follow these instructions: 
@@ -162,16 +168,16 @@ If you have troubles to use Anaconda in Visual Studio Code, follow these instruc
 - [Windows](https://stackoverflow.com/a/61937090/14796848)
 - [Mac](https://stackoverflow.com/a/55203534/14796848)
 
-Additional VS Code options:
+More VS Code options:
 
 - Pro tips: [25 VS Code Productivity Tips and Speed Hacks](https://www.youtube.com/watch?v=ifTF3ags0XI)
 
-How to configure [native bracket pair colorization](https://code.visualstudio.com/blogs/2021/09/29/bracket-pair-colorization):
+- How to configure [native bracket pair colorization](https://code.visualstudio.com/blogs/2021/09/29/bracket-pair-colorization):
 
-- Remove any existing Bracket Pair Colorizer extensions (if you have installed any).
-- Open your user settings: `CMD (CTRL for non-Mac users) + Shift + P` and type `settings`. 
-- Select `Open settings (JSON)
-- Add the following code:
+  - Remove any existing Bracket Pair Colorizer extensions (if you have installed any).
+  - Open your user settings: `CMD (CTRL for non-Mac users) + Shift + P` and type `settings`. 
+  - Select `Open settings (JSON)
+  - Add the following code:
 
 ```bash
 "editor.bracketPairColorization.enabled": true
@@ -179,13 +185,13 @@ How to configure [native bracket pair colorization](https://code.visualstudio.co
 
 ## Command-line interface
 
+Operating systems like Windows and MacOS implement a command-line interface (other names for the command line are: cmd, CLI, prompt, console or terminal) in a shell for interactive access to operating system functions or services. 
+
 :::{note}
 A command-line interface (CLI) processes commands to a computer program in the form of lines of text.
 :::
 
-Operating systems like Windows and MacOS implement a command-line interface (other names for the command line are: cmd, CLI, prompt, console or terminal) in a shell for interactive access to operating system functions or services. 
-
-We sometimes use the command line interface to perform some simple tasks so you should be familiar with basic commands. If you aren't familiar with the terminal, read this short introduction to the command-line interface:
+We sometimes use the command line interface so you should be familiar with basic commands. If you aren't familiar with the terminal, read this short introduction to the command-line interface:
 
 ```{admonition} To do
 :class: tip
@@ -210,19 +216,21 @@ rmdir /S          | rm -r                    | delete a directory         | **rm
 
 ## Git and GitHub
 
+[GitHub](https://github.com/) is a provider of internet hosting for software development and version control using Git. We will use GitHub as a platform for web hosting and collaboration and as our course management system.
+
 :::{note}
 Git is a version control system -- like the “Track Changes” features from Microsoft Word with many more additional features.
 :::
-
-[GitHub](https://github.com/) is a provider of internet hosting for software development and version control using Git. We will use GitHub as a platform for web hosting and collaboration and as our course management system.
 
 - Git can be used to store content 
 - Code can be changed and other developers can add code in parallel.
 - Git has a remote repository which is stored in a server and a local repository which is stored in the computer of each developer.  
 
+<br>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/w3jLJU7DT5E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
 
+<br>
 
 You need a free GitHub-account for our course. Please follow the instructions below (*in case you already have a GitHub account: please add your HdM-email address to your account*):
 
@@ -248,6 +256,7 @@ A community-based space to find and contribute answers to technical challenges.
 :::
 
 The website serves as a platform for users to ask and answer questions, and, through membership and active participation, to vote questions and answers up or down similar to [Reddit](https://www.reddit.com/) and edit questions and answers in a fashion similar to a wiki.
+
 
 ## Stay up to data
 
