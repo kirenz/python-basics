@@ -1,6 +1,17 @@
 # Welcome
 
-This short tutorial is a very brief exploration of the essential features of Python. 
+The goal of this tutorial is to give you a first impression of some important tools and concepts in Python when doing data science or statistics projects. 
+
+A typical project looks something like this {cite:p}`Wickham2016`: 
+
+```{image} ../_static/img/data-science.png
+:alt: datascience
+:class: bg-primary mb-1
+:width: 600px
+:align: center
+```
+
+Surrounding all these steps is programming and the usage of different tools like Visual Studio Code, Jupyter Notebooks, Anaconda and GitHub. You’ll use these tools in almost every data science project and this book will give you a short introduction into the most important basics. 
 
 ---
 
