@@ -4,10 +4,13 @@ This section contains an overview about the programming toolkit you will need fo
 
 ## Python
 
-Python is an object-oriented language (an object is an entity that contains data along with associated metadata and/or functionality). One thing that distinguishes Python from other programming languages is that it is interpreted rather than compiled. This means that it is executed line by line which is particular useful for data analysis, as well as the creation of interactive, executable documents like Jupyter Notebooks.
+Python is an object-oriented language (an object is an entity that contains data along with associated metadata and/or functionality).
 
-- Python is an interpreted language.
-- The Python interpreter runs a program by executing one statement at a time.
+One thing that distinguishes Python from other programming languages is that it is interpreted rather than compiled. This means that it is executed line by line which is particular useful for data analysis, as well as the creation of interactive, executable documents like Jupyter Notebooks.
+
+:::{Note}
+Python is an interpreted language. The Python interpreter runs a program by executing one statement at a time.
+:::
 
 On top of this, there is a broad ecosystem of third-party tools and modules that offer more specialized data science functionality.
 
@@ -19,11 +22,11 @@ On top of this, there is a broad ecosystem of third-party tools and modules that
 Jupyter Notebook is a web-based interactive computational environment for creating documents that contain code and text
 :::
 
-- A notebook is basically a list of cells
-- Cells contain either
-  - explanatory text or
-  - executable code and its
-  - output
+A notebook is basically a list of cells and the cells contain either
+
+1. explanatory text (written in markdown)
+1. executable code
+1. code output
   
 ## Colab
 
@@ -77,34 +80,38 @@ The open-source [Anaconda](https://www.anaconda.com/products/individual) Individ
 Anaconda is a data science toolkit which already includes most of the data science modules we need.
 :::
 
- Furthermore, Anaconda's package manager `conda` makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called virtual environments). `conda` analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2,0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done.
+ Furthermore, Anaconda's package manager `conda` makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called virtual environments). 
+ 
+ `conda` analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2,0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done.
 
 
 ```{admonition} To do
 :class: tip
 
-Install Anaconda Individual Edition
+Install the latest version of the Anaconda Individual Edition
 
 - [Anaconda installation](https://www.anaconda.com/products/individual)
 ```
 
-Here some examples of how to install or update Python modules by using `conda`:
+*If you already have Anaconda on your machine, make sure that you use the latest version (in our course, we use Python 3.9). You may also delete your current Anaconda environment from your machine and install the latest version.*
+
+After you have installed Anaconda, you can install additional modules or update Anaconda by using `conda`:
 
 - On *Windows* open the Start menu and open an Anaconda Command Prompt. 
 - On *macOS* or *Linux* open a terminal window.
-- Activate the conda environment of your choice (e.g. the base environment)
+- Activate the conda environment of your choice (e.g. the base environment). Ususally, the base environment is already avtivated. If not, type: 
 
 ```bash
 conda activate base
 ```
 
-- Update Anaconda (this will update all packages in the current environment to the latest version):
+If you want to update Anaconda (this will update all packages in the current environment to the latest version but will not update Python), use this command:
 
 ```terminal
 conda update --all
 ```
 
-- Install scikit-learn [see conda documentation](https://anaconda.org/anaconda/scikit-learn)
+If you want to install new modules, always use conda (not pip). Here is an example of how to install scikit-learn [see conda documentation](https://anaconda.org/anaconda/scikit-learn)
 
 ```bash
 conda install -c anaconda scikit-learn
@@ -119,8 +126,6 @@ Visual Studio Code is a code editor that can be used with a variety of programmi
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/KMxo3T_MTvY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Visual Studio Code (also called Code) is a powerful source code editor which runs on your desktop and is available for Windows, macOS and Linux. It comes with a rich ecosystem of extensions for Python and we use them to write our Python code.
-
-
 
 ```{admonition} To do
 :class: tip
@@ -137,7 +142,6 @@ Install Extensions:
 
 - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 - [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
-- [Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv)
 - [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
 
 Learn how to use Jupyter Notebooks:

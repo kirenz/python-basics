@@ -45,12 +45,11 @@
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -380,11 +379,12 @@
 <p>This section contains an overview about the programming toolkit you will need for our course. Please read the instructions and complete the tasks listed in the yellow <em>To do</em> boxes.</p>
 <div class="section" id="python">
 <h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
-<p>Python is an object-oriented language (an object is an entity that contains data along with associated metadata and/or functionality). One thing that distinguishes Python from other programming languages is that it is interpreted rather than compiled. This means that it is executed line by line which is particular useful for data analysis, as well as the creation of interactive, executable documents like Jupyter Notebooks.</p>
-<ul class="simple">
-<li><p>Python is an interpreted language.</p></li>
-<li><p>The Python interpreter runs a program by executing one statement at a time.</p></li>
-</ul>
+<p>Python is an object-oriented language (an object is an entity that contains data along with associated metadata and/or functionality).</p>
+<p>One thing that distinguishes Python from other programming languages is that it is interpreted rather than compiled. This means that it is executed line by line which is particular useful for data analysis, as well as the creation of interactive, executable documents like Jupyter Notebooks.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Python is an interpreted language. The Python interpreter runs a program by executing one statement at a time.</p>
+</div>
 <p>On top of this, there is a broad ecosystem of third-party tools and modules that offer more specialized data science functionality.</p>
 </div>
 <div class="section" id="jupyter-notebook">
@@ -394,16 +394,12 @@
 <p class="admonition-title">Note</p>
 <p>Jupyter Notebook is a web-based interactive computational environment for creating documents that contain code and text</p>
 </div>
-<ul class="simple">
-<li><p>A notebook is basically a list of cells</p></li>
-<li><p>Cells contain either</p>
-<ul>
-<li><p>explanatory text or</p></li>
-<li><p>executable code and its</p></li>
-<li><p>output</p></li>
-</ul>
-</li>
-</ul>
+<p>A notebook is basically a list of cells and the cells contain either</p>
+<ol class="simple">
+<li><p>explanatory text (written in markdown)</p></li>
+<li><p>executable code</p></li>
+<li><p>code output</p></li>
+</ol>
 </div>
 <div class="section" id="colab">
 <h2>Colab<a class="headerlink" href="#colab" title="Permalink to this headline">¶</a></h2>
@@ -429,7 +425,7 @@
 <p>Markdown is a simple way to format text that looks great on any device.</p>
 </div>
 <p>Markdown is one of the world’s most popular markup languages used in data science. Jupyter Notebooks use Markdown to provide an unified authoring framework for data science, combining code, its results, and commentary in Markdown.</p>
-<p>According to <span id="id1">Wickham and Grolemund [<a class="reference internal" href="reference.html#id9">2016</a>]</span>, Markdown files are designed to be used in three ways:</p>
+<p>According to <span id="id1">Wickham and Grolemund [<a class="reference internal" href="reference.html#id7" title="Hadley Wickham and Garrett Grolemund. R for data science: import, tidy, transform, visualize, and model data. O'Reilly Media, Inc., 2016. URL: https://r4ds.had.co.nz.">2016</a>]</span>, Markdown files are designed to be used in three ways:</p>
 <ol class="simple">
 <li><p>For communicating to decision makers, who want to focus on the conclusions, not the code behind the analysis.</p></li>
 <li><p>For collaborating with other data scientists, who are interested in both your conclusions, and how you reached them (i.e. the code).</p></li>
@@ -451,32 +447,30 @@
 <p class="admonition-title">Note</p>
 <p>Anaconda is a data science toolkit which already includes most of the data science modules we need.</p>
 </div>
-<p>Furthermore, Anaconda’s package manager <code class="docutils literal notranslate"><span class="pre">conda</span></code> makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called virtual environments). <code class="docutils literal notranslate"><span class="pre">conda</span></code> analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2,0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done.</p>
+<p>Furthermore, Anaconda’s package manager <code class="docutils literal notranslate"><span class="pre">conda</span></code> makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called virtual environments).</p>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span></code> analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2,0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done.</p>
 <div class="tip admonition">
 <p class="admonition-title">To do</p>
-<p>Install Anaconda Individual Edition</p>
+<p>Install the latest version of the Anaconda Individual Edition</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda installation</a></p></li>
 </ul>
 </div>
-<p>Here some examples of how to install or update Python modules by using <code class="docutils literal notranslate"><span class="pre">conda</span></code>:</p>
+<p><em>If you already have Anaconda on your machine, make sure that you use the latest version (in our course, we use Python 3.9). You may also delete your current Anaconda environment from your machine and install the latest version.</em></p>
+<p>After you have installed Anaconda, you can install additional modules or update Anaconda by using <code class="docutils literal notranslate"><span class="pre">conda</span></code>:</p>
 <ul class="simple">
 <li><p>On <em>Windows</em> open the Start menu and open an Anaconda Command Prompt.</p></li>
 <li><p>On <em>macOS</em> or <em>Linux</em> open a terminal window.</p></li>
-<li><p>Activate the conda environment of your choice (e.g. the base environment)</p></li>
+<li><p>Activate the conda environment of your choice (e.g. the base environment). Ususally, the base environment is already avtivated. If not, type:</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate base
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Update Anaconda (this will update all packages in the current environment to the latest version):</p></li>
-</ul>
+<p>If you want to update Anaconda (this will update all packages in the current environment to the latest version but will not update Python), use this command:</p>
 <div class="highlight-terminal notranslate"><div class="highlight"><pre><span></span>conda update --all
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Install scikit-learn <a class="reference external" href="https://anaconda.org/anaconda/scikit-learn">see conda documentation</a></p></li>
-</ul>
+<p>If you want to install new modules, always use conda (not pip). Here is an example of how to install scikit-learn <a class="reference external" href="https://anaconda.org/anaconda/scikit-learn">see conda documentation</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c anaconda scikit-learn
 </pre></div>
 </div>
@@ -503,7 +497,6 @@
 <ul class="simple">
 <li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python</a></p></li>
 <li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint">Markdownlint</a></p></li>
-<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv">Rainbow CSV</a></p></li>
 <li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens">GitLens</a></p></li>
 </ul>
 <p>Learn how to use Jupyter Notebooks:</p>
