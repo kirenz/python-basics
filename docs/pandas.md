@@ -4,8 +4,9 @@ The popular Python module [pandas](https://pandas.pydata.org/) is an easy to use
 
 We cover pandas in more detail in this book:
 
+<br>
 
-```{admonition} Resources
+```{admonition} Jupyter Book
 :class: tip
 - [Introduction to pandas](https://kirenz.github.io/pandas/intro.html)
 ```
