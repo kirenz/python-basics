@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IPython &#8212; Python basics</title>
+    <title>Pandas &#8212; Python basics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Bibliography" href="reference.html" />
-    <link rel="prev" title="Scikit-learn" href="scikit-learn.html" />
+    <link rel="next" title="NumPy" href="numpy.html" />
+    <link rel="prev" title="Modules" href="modules.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -138,14 +138,14 @@ const thebe_selector_output = ".output, .cell_output"
   Modules
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="modules.html">
    Modules
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="pandas.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Pandas
   </a>
  </li>
@@ -165,9 +165,9 @@ const thebe_selector_output = ".output, .cell_output"
   Jupyter
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ipython.html">
    IPython
   </a>
  </li>
@@ -224,9 +224,9 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/docs/ipython.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/docs/pandas.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -244,7 +244,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/kirenz/python-basics/issues/new?title=Issue%20on%20page%20%2Fdocs/ipython.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/kirenz/python-basics/issues/new?title=Issue%20on%20page%20%2Fdocs/pandas.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -260,40 +260,11 @@ const thebe_selector_output = ".output, .cell_output"
 
             <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/kirenz/python-basics/blob/main/docs/ipython.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#magic-commands">
-   Magic commands
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -301,96 +272,27 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>IPython</h1>
+                <h1>Pandas</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#magic-commands">
-   Magic commands
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="ipython">
-<h1>IPython<a class="headerlink" href="#ipython" title="Permalink to this headline">¶</a></h1>
-<p><em>This short tutorial is a very brief exploration of the essential features of IPython and Jupyter Notebooks. It is mainly based on content from <a class="reference external" href="https://wesmckinney.com/book/">Python for Data Analysis</a> by Wes McKinney.</em></p>
-<p>You can run any file as a Python program inside the environment of your IPython session using the %run command. Suppose you had the following simple script stored in ipython_script_test.py:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="n">z</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">6</span>
-<span class="n">c</span> <span class="o">=</span> <span class="mf">7.5</span>
-
-<span class="n">result</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>You can execute this by passing the filename to %run:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> ipython_script_test.py
-</pre></div>
-</div>
-</div>
-</div>
-<p>In the Jupyter notebook, you may also use the related %load magic function, which imports a script into a code cell:</p>
-<div class="section" id="magic-commands">
-<h2>Magic commands<a class="headerlink" href="#magic-commands" title="Permalink to this headline">¶</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="pandas">
+<h1>Pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h1>
+<p>The popular Python module <a class="reference external" href="https://pandas.pydata.org/">pandas</a> is an easy to use data analysis and manipulation tool.</p>
+<p>We cover pandas in more detail in this book:</p>
+<br>
+<div class="tip admonition">
+<p class="admonition-title">Jupyter Book</p>
 <ul class="simple">
-<li><p>IPython’s special commands (which are not built into Python itself) are known as “magic” commands</p></li>
-<li><p>These are designed to facilitate common tasks</p></li>
-<li><p>A magic command is any command prefixed by the percent symbol <code class="docutils literal notranslate"><span class="pre">%</span></code>.</p></li>
+<li><p><a class="reference external" href="https://kirenz.github.io/pandas/intro.html">Introduction to pandas</a></p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pwd</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/runner/work/python-basics/python-basics/docs&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span> <span class="o">=</span> <span class="o">%</span><span class="k">pwd</span>
-
-<span class="n">foo</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/runner/work/python-basics/python-basics/docs&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>Type <code class="docutils literal notranslate"><span class="pre">%quickref</span></code> to view all magic commands</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">quickref</span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 </div>
 
@@ -419,17 +321,17 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="scikit-learn.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="modules.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Scikit-learn</p>
+            <p class="prev-next-title">Modules</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="reference.html" title="next page">
+    <a class='right-next' id="next-link" href="numpy.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bibliography</p>
+        <p class="prev-next-title">NumPy</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
