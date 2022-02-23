@@ -11,7 +11,8 @@ parts:
     - file: docs/regex.ipynb   
   - caption: Modules
     chapters:
-    - file: docs/modules.ipynb 
+    - file: docs/modules.ipynb
+    - file: docs/pandas.md 
     - file: docs/numpy.ipynb 
     - file: docs/scikit-learn.ipynb  
   - caption: Jupyter
