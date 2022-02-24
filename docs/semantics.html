@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Regular expressions" href="regex.html" />
+    <link rel="next" title="Overview" href="modules.html" />
     <link rel="prev" title="Syntax" href="syntax.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -127,11 +127,6 @@ const thebe_selector_output = ".output, .cell_output"
    Semantics
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="regex.html">
-   Regular expressions
-  </a>
- </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -141,7 +136,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="modules.html">
-   Modules
+   Overview
   </a>
  </li>
  <li class="toctree-l1">
@@ -440,6 +435,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manipulate-strings">
+   Manipulate strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#errors-and-exceptions">
    Errors and Exceptions
   </a>
@@ -625,6 +625,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manipulate-strings">
+   Manipulate strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#errors-and-exceptions">
    Errors and Exceptions
   </a>
@@ -650,7 +655,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p><em>This short tutorial is a very brief exploration of the essential features of Python semantics. It is mainly based on content from the App <a class="reference external" href="https://tinkerstellar.com">Tinkerstellar</a> by Alex Staravoitau, Jack VanderPlas’s <a class="reference external" href="https://jakevdp.github.io/WhirlwindTourOfPython/">Whirlwind Tour of Python</a> and <a class="reference external" href="https://wesmckinney.com/book/">Python for Data Analysis</a> by Wes McKinney.</em></p>
 <ul class="simple">
 <li><p>Semantics of a language involve the meaning of the statements</p></li>
-<li><p>This section will cover the semantics of variables and objects, which are the main ways you store, reference, and operate on data within a Python script</p></li>
+<li><p>This section will cover the semantics of variables and objects, which are the main ways you store, reference, and operate on data within a Python script.</p></li>
 </ul>
 <div class="section" id="variables-as-pointers">
 <h2>Variables as pointers<a class="headerlink" href="#variables-as-pointers" title="Permalink to this headline">¶</a></h2>
@@ -1260,7 +1265,10 @@ Range from 0 to 10 by 2:  [0, 2, 4, 6, 8]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 1 2 3 4 5 6 7 8 9 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 1 2 3 4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 5 6 7 8 9 
 </pre></div>
 </div>
 </div>
@@ -1950,6 +1958,136 @@ kwargs =  {&#39;pi&#39;: 3.14}
 <li><p>This type of construction can be extended to three, four, or more iterators within the comprehension</p></li>
 </ul>
 </div>
+<div class="section" id="manipulate-strings">
+<h2>Manipulate strings<a class="headerlink" href="#manipulate-strings" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>First, we create a list of somewhat messy strings:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">states</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;   Alabama &#39;</span><span class="p">,</span> <span class="s1">&#39;Georgia!&#39;</span><span class="p">,</span> <span class="s1">&#39;Georgia&#39;</span><span class="p">,</span> <span class="s1">&#39;georgia&#39;</span><span class="p">,</span> <span class="s1">&#39;FlOrIda&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;south   carolina##&#39;</span><span class="p">,</span> <span class="s1">&#39;West virginia?&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>We mant to make this list of strings uniform and ready for analysis:</p>
+<ul>
+<li><p>stripping whitespace,</p></li>
+<li><p>removing punctuation symbols,</p></li>
+<li><p>standardizing on proper capitalization.</p></li>
+</ul>
+</li>
+<li><p>We use the built-in string methods along with the re standard library module for regular expressions:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="k">def</span> <span class="nf">clean_strings</span><span class="p">(</span><span class="n">strings</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">strings</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;[!#?]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clean_strings</span><span class="p">(</span><span class="n">states</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Alabama&#39;,
+ &#39;Georgia&#39;,
+ &#39;Georgia&#39;,
+ &#39;Georgia&#39;,
+ &#39;Florida&#39;,
+ &#39;South   Carolina&#39;,
+ &#39;West Virginia&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>An alternative approach that you may find useful is to make a list of the operations you want to apply to a particular set of strings:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_punctuation</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;[!#?]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+<span class="n">clean_ops</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="o">.</span><span class="n">strip</span><span class="p">,</span> <span class="n">remove_punctuation</span><span class="p">,</span> <span class="nb">str</span><span class="o">.</span><span class="n">title</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">clean_strings</span><span class="p">(</span><span class="n">strings</span><span class="p">,</span> <span class="n">ops</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">strings</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">func</span> <span class="ow">in</span> <span class="n">ops</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clean_strings</span><span class="p">(</span><span class="n">states</span><span class="p">,</span> <span class="n">clean_ops</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Alabama&#39;,
+ &#39;Georgia&#39;,
+ &#39;Georgia&#39;,
+ &#39;Georgia&#39;,
+ &#39;Florida&#39;,
+ &#39;South   Carolina&#39;,
+ &#39;West Virginia&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A more functional pattern like this enables you to easily modify how the strings are transformed at a very high level.</p></li>
+<li><p>The clean_strings function is also now more reusable and generic.</p></li>
+<li><p>You can use functions as arguments to other functions like the built-in map function, which applies a function to a sequence of some kind:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">map</span><span class="p">(</span><span class="n">remove_punctuation</span><span class="p">,</span> <span class="n">states</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Alabama 
+Georgia
+Georgia
+georgia
+FlOrIda
+south   carolina
+West virginia
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Note that pandas is also equipped with a set of string processing methods that make it easy to operate on string data. Check out the official pandas documentation to learn more about string processing:</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Tutorial</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#working-with-text-data">Working with text data in pandas</a></p></li>
+</ul>
+</div>
+</div>
 <div class="section" id="errors-and-exceptions">
 <h2>Errors and Exceptions<a class="headerlink" href="#errors-and-exceptions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -2037,10 +2175,10 @@ kwargs =  {&#39;pi&#39;: 3.14}
             <p class="prev-next-title">Syntax</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="regex.html" title="next page">
+    <a class='right-next' id="next-link" href="modules.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Regular expressions</p>
+        <p class="prev-next-title">Overview</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
