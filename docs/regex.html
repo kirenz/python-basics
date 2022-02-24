@@ -281,6 +281,24 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manipulate-strings">
+   Manipulate strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#text-data-in-pandas">
+   Text data in pandas
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -293,6 +311,24 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manipulate-strings">
+   Manipulate strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#text-data-in-pandas">
+   Text data in pandas
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -302,6 +338,11 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="regular-expressions">
 <h1>Regular expressions<a class="headerlink" href="#regular-expressions" title="Permalink to this headline">¶</a></h1>
 <p><em>This short tutorial is a very brief exploration of the essential features of IPython and Jupyter Notebooks. It is mainly based on content from <a class="reference external" href="https://wesmckinney.com/book/">Python for Data Analysis</a> by Wes McKinney.</em></p>
+<div class="section" id="manipulate-strings">
+<h2>Manipulate strings<a class="headerlink" href="#manipulate-strings" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>First, we create a list of somewhat messy strings:</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">states</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;   Alabama &#39;</span><span class="p">,</span> <span class="s1">&#39;Georgia!&#39;</span><span class="p">,</span> <span class="s1">&#39;Georgia&#39;</span><span class="p">,</span> <span class="s1">&#39;georgia&#39;</span><span class="p">,</span> <span class="s1">&#39;FlOrIda&#39;</span><span class="p">,</span>
@@ -415,6 +456,17 @@ south   carolina
 West virginia
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+<div class="section" id="text-data-in-pandas">
+<h2>Text data in pandas<a class="headerlink" href="#text-data-in-pandas" title="Permalink to this headline">¶</a></h2>
+<p>Pandas is equipped with a set of string processing methods that make it easy to operate on string data. Check out the official pandas documentation to learn more about string processing:</p>
+<div class="tip admonition">
+<p class="admonition-title">Tutorial</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#working-with-text-data">Working with text data in pandas</a></p></li>
+</ul>
 </div>
 </div>
 </div>
