@@ -8,7 +8,6 @@ parts:
     chapters:
     - file: docs/syntax.ipynb
     - file: docs/semantics.ipynb
-    - file: docs/regex.ipynb   
   - caption: Modules
     chapters:
     - file: docs/modules.ipynb

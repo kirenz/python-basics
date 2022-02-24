@@ -2,9 +2,7 @@
 
 The popular Python module [pandas](https://pandas.pydata.org/) is an easy to use data analysis and manipulation tool.
 
-We cover pandas in more detail in this book:
-
-<br>
+We cover pandas in more detail in this book:  
 
 ```{admonition} Jupyter Book
 :class: tip
