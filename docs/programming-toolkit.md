@@ -24,7 +24,7 @@ On top of this, there is a broad ecosystem of third-party tools and modules (lik
 ```{image} ../_static/img/jupyter.png
 :alt: jupyter
 :class: bg-primary mb-1
-:width: 150px
+:width: 300px
 :align: center
 ```
 
