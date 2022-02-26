@@ -12,7 +12,8 @@ parts:
     chapters:
     - file: docs/modules.ipynb
     - file: docs/pandas.md 
-    - file: docs/numpy.ipynb 
+    - file: docs/numpy.ipynb
+    - file: docs/matplotlib-seaborn.md     
     - file: docs/scikit-learn.ipynb  
   - caption: Jupyter
     chapters:
