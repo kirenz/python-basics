@@ -6,5 +6,5 @@ We cover pandas in more detail in this book:
 
 ```{admonition} Jupyter Book
 :class: tip
-- [Introduction to pandas](https://kirenz.github.io/pandas/intro.html)
+- [Introduction to pandas](https://kirenz.github.io/pandas/docs/intro.html)
 ```
