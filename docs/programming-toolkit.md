@@ -255,20 +255,8 @@ You need a free GitHub-account for our course. Please follow the instructions be
 
 ## Cookiecutter Data Science
 
-A logical, reasonably standardized, but flexible project structure for doing and sharing data science work.
+A logical, reasonably standardized, but flexible project structure for doing and sharing data science work:
 
-```{admonition} To do
-:class: tip
-
-- Read the [getting started guide](http://drivendata.github.io/cookiecutter-data-science/#getting-started) 
-
-```
-
-To start a new project, run this command in the terminal (in the folder you want to create your project):
-
-```bash
-cookiecutter -c v1 https://github.com/drivendata/cookiecutter-data-science
-```
 
 Directory structure:
 
@@ -318,6 +306,21 @@ Directory structure:
 │
 └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
 ```
+
+
+```{admonition} To do
+:class: tip
+
+- Read the [getting started guide](http://drivendata.github.io/cookiecutter-data-science/#getting-started) 
+
+```
+
+To start a new project, run this command in the terminal (in the folder you want to create your project):
+
+```bash
+cookiecutter -c v1 https://github.com/drivendata/cookiecutter-data-science
+```
+
 
 ## Stackoverflow
 
