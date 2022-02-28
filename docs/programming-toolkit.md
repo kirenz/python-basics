@@ -126,6 +126,12 @@ If you want to install new modules, always use conda (and not the package instal
 conda install -c anaconda scikit-learn
 ```
 
+or use
+
+```bash
+conda update scikit-learn
+```
+
 ## Visual Studio Code 
 
 Visual Studio Code (also called Code) is a powerful source code editor which runs on your desktop and is available for Windows, macOS and Linux. It comes with a rich ecosystem of extensions for Python and we use them to write our Python code.
