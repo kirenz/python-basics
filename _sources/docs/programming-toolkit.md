@@ -253,6 +253,24 @@ You need a free GitHub-account for our course. Please follow the instructions be
 - [Install GitHub desktop to synchronize your machine with GitHub](https://desktop.github.com/)
 ```
 
+## Cookiecutter Data Science
+
+A logical, reasonably standardized, but flexible project structure for doing and sharing data science work.
+
+```{admonition} To do
+:class: tip
+
+- Read the [getting started guide](http://drivendata.github.io/cookiecutter-data-science/#getting-started) 
+
+```
+
+To start a new project, run this command in the terminal (in the folder you want to create your project):
+
+```bash
+cookiecutter -c v1 https://github.com/drivendata/cookiecutter-data-science
+```
+
+
 ## Stackoverflow
 
 [Stackoverflow](https://stackoverflow.com/) is a public platform with a massive collection of coding questions & answers. So whenever you run into issues with your code, Stackoverlow is a great place to find answers!
