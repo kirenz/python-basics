@@ -94,43 +94,58 @@ Furthermore, Anaconda's package manager `conda` makes it easy to manage multiple
  
 `conda` analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2,0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done.
 
+*If you already have Anaconda on your machine, make sure that you use the latest version (in our course, we use Python 3.9 but Python 3.8 or 3.7 is also fine). In your terminal, type `python --version` to see which Python version you are using in your Anaconda base environment.* 
+
+*You may also uninstall your current Anaconda environment from your machine and install the latest version: here a guide of how to [uninstall Anaconda](https://docs.anaconda.com/anaconda/install/uninstall/).*
+
+
 ```{admonition} To do
 :class: tip
 
 Install the latest version of the Anaconda Individual Edition
 
 - [Anaconda installation](https://www.anaconda.com/products/individual)
-```
 
-*If you already have Anaconda on your machine, make sure that you use the latest version (in our course, we use Python 3.9). You may also delete your current Anaconda environment from your machine and install the latest version.*
+- Follow the steps described below
+```
 
 After you have installed Anaconda, you can install additional modules or update Anaconda by using `conda`:
 
-- On *Windows* open the Start menu and open an Anaconda Command Prompt. 
+- On *Windows* open the Start menu and open an "Anaconda Command Prompt". 
 - On *macOS* or *Linux* open a terminal window.
-- Activate the conda environment of your choice (e.g. the base environment). Ususally, the base environment is already avtivated. If not, type: 
+- Usually, the so called `base` environment is already activated (and you can see the word `base` in your terminal). If not, type: 
 
 ```bash
 conda activate base
 ```
 
-If you want to update Anaconda (this will update all packages in the current environment to the latest version but will not update Python), use this command:
+Now, take a look at all the modules in your environment:
+
+```bash
+conda list
+```
+
+Make sure that you use `scikit-learn` in version 1.0.2 or higher. If this is not the case, update Anaconda:
+
+
+- If you want to **update Anaconda** (this will update all packages in the current environment to the latest version but will not update Python), use this command:
 
 ```terminal
 conda update --all
 ```
 
-If you want to install new modules, always use conda (and not the package installer for Python: [pip](https://pypi.org/project/pip/)). Here is an example of how to install scikit-learn [see conda documentation](https://anaconda.org/anaconda/scikit-learn)
+- If you only want to **update specific modules**, use conda update and the name of the module (e.g., scikit-learn)
+
+```bash
+conda update scikit-learn
+```
+
+- If you want to **install new modules**, always use conda (and not the package installer for Python: [pip](https://pypi.org/project/pip/)). Here is an example of how to install scikit-learn [see conda documentation](https://anaconda.org/anaconda/scikit-learn)
 
 ```bash
 conda install -c anaconda scikit-learn
 ```
 
-or use
-
-```bash
-conda update scikit-learn
-```
 
 ## Visual Studio Code 
 
@@ -253,12 +268,12 @@ You need a free GitHub-account for our course. Please follow the instructions be
 - [Install GitHub desktop to synchronize your machine with GitHub](https://desktop.github.com/)
 ```
 
-## Cookiecutter Data Science
+## Cookiecutter
 
-A logical, reasonably standardized, but flexible project structure for doing and sharing data science work:
+Cookiecutter is a command-line utility that creates projects from cookiecutters (project templates), e.g. creating a Python package project from a Python package project template.
 
+Here we use the `cookiecutter-data-science` to create a logical, reasonably standardized, but flexible project structure for doing and sharing data science work. It creates the following folder structure:
 
-Directory structure:
 
 ```nohighlight
 ├── LICENSE
@@ -311,8 +326,9 @@ Directory structure:
 ```{admonition} To do
 :class: tip
 
-- Read the [getting started guide](http://drivendata.github.io/cookiecutter-data-science/#getting-started) 
+- Use conda to install cookiecutter: `conda install -c conda-forge cookiecutter` 
 
+- Read the [getting started guide](http://drivendata.github.io/cookiecutter-data-science/#getting-started) 
 ```
 
 To start a new project, run this command in the terminal (in the folder you want to create your project):
