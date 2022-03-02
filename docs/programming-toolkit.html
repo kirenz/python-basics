@@ -316,8 +316,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cookiecutter-data-science">
-   Cookiecutter Data Science
+  <a class="reference internal nav-link" href="#cookiecutter">
+   Cookiecutter
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -391,8 +391,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cookiecutter-data-science">
-   Cookiecutter Data Science
+  <a class="reference internal nav-link" href="#cookiecutter">
+   Cookiecutter
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -489,33 +489,46 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>Furthermore, Anaconda’s package manager <code class="docutils literal notranslate"><span class="pre">conda</span></code> makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called virtual environments).</p>
 <p><code class="docutils literal notranslate"><span class="pre">conda</span></code> analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2,0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done.</p>
+<p><em>If you already have Anaconda on your machine, make sure that you use the latest version (in our course, we use Python 3.9 but Python 3.8 or 3.7 is also fine). In your terminal, type <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">--version</span></code> to see which Python version you are using in your Anaconda base environment.</em></p>
+<p><em>You may also uninstall your current Anaconda environment from your machine and install the latest version: here a guide of how to <a class="reference external" href="https://docs.anaconda.com/anaconda/install/uninstall/">uninstall Anaconda</a>.</em></p>
 <div class="tip admonition">
 <p class="admonition-title">To do</p>
 <p>Install the latest version of the Anaconda Individual Edition</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda installation</a></p></li>
+<li><p>Follow the steps described below</p></li>
 </ul>
 </div>
-<p><em>If you already have Anaconda on your machine, make sure that you use the latest version (in our course, we use Python 3.9). You may also delete your current Anaconda environment from your machine and install the latest version.</em></p>
 <p>After you have installed Anaconda, you can install additional modules or update Anaconda by using <code class="docutils literal notranslate"><span class="pre">conda</span></code>:</p>
 <ul class="simple">
-<li><p>On <em>Windows</em> open the Start menu and open an Anaconda Command Prompt.</p></li>
+<li><p>On <em>Windows</em> open the Start menu and open an “Anaconda Command Prompt”.</p></li>
 <li><p>On <em>macOS</em> or <em>Linux</em> open a terminal window.</p></li>
-<li><p>Activate the conda environment of your choice (e.g. the base environment). Ususally, the base environment is already avtivated. If not, type:</p></li>
+<li><p>Usually, the so called <code class="docutils literal notranslate"><span class="pre">base</span></code> environment is already activated (and you can see the word <code class="docutils literal notranslate"><span class="pre">base</span></code> in your terminal). If not, type:</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate base
 </pre></div>
 </div>
-<p>If you want to update Anaconda (this will update all packages in the current environment to the latest version but will not update Python), use this command:</p>
+<p>Now, take a look at all the modules in your environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda list
+</pre></div>
+</div>
+<p>Make sure that you use <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> in version 1.0.2 or higher. If this is not the case, update Anaconda:</p>
+<ul class="simple">
+<li><p>If you want to <strong>update Anaconda</strong> (this will update all packages in the current environment to the latest version but will not update Python), use this command:</p></li>
+</ul>
 <div class="highlight-terminal notranslate"><div class="highlight"><pre><span></span>conda update --all
 </pre></div>
 </div>
-<p>If you want to install new modules, always use conda (and not the package installer for Python: <a class="reference external" href="https://pypi.org/project/pip/">pip</a>). Here is an example of how to install scikit-learn <a class="reference external" href="https://anaconda.org/anaconda/scikit-learn">see conda documentation</a></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c anaconda scikit-learn
+<ul class="simple">
+<li><p>If you only want to <strong>update specific modules</strong>, use conda update and the name of the module (e.g., scikit-learn)</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda update scikit-learn
 </pre></div>
 </div>
-<p>or use</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda update scikit-learn
+<ul class="simple">
+<li><p>If you want to <strong>install new modules</strong>, always use conda (and not the package installer for Python: <a class="reference external" href="https://pypi.org/project/pip/">pip</a>). Here is an example of how to install scikit-learn <a class="reference external" href="https://anaconda.org/anaconda/scikit-learn">see conda documentation</a></p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c anaconda scikit-learn
 </pre></div>
 </div>
 </div>
@@ -679,10 +692,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </div>
 </div>
-<div class="section" id="cookiecutter-data-science">
-<h2>Cookiecutter Data Science<a class="headerlink" href="#cookiecutter-data-science" title="Permalink to this headline">¶</a></h2>
-<p>A logical, reasonably standardized, but flexible project structure for doing and sharing data science work:</p>
-<p>Directory structure:</p>
+<div class="section" id="cookiecutter">
+<h2>Cookiecutter<a class="headerlink" href="#cookiecutter" title="Permalink to this headline">¶</a></h2>
+<p>Cookiecutter is a command-line utility that creates projects from cookiecutters (project templates), e.g. creating a Python package project from a Python package project template.</p>
+<p>Here we use the <code class="docutils literal notranslate"><span class="pre">cookiecutter-data-science</span></code> to create a logical, reasonably standardized, but flexible project structure for doing and sharing data science work. It creates the following folder structure:</p>
 <div class="highlight-nohighlight notranslate"><div class="highlight"><pre><span></span>├── LICENSE
 ├── Makefile           &lt;- Makefile with commands like `make data` or `make train`
 ├── README.md          &lt;- The top-level README for developers using this project.
@@ -732,6 +745,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="tip admonition">
 <p class="admonition-title">To do</p>
 <ul class="simple">
+<li><p>Use conda to install cookiecutter: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">cookiecutter</span></code></p></li>
 <li><p>Read the <a class="reference external" href="http://drivendata.github.io/cookiecutter-data-science/#getting-started">getting started guide</a></p></li>
 </ul>
 </div>
