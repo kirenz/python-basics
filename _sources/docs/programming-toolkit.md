@@ -268,6 +268,16 @@ You need a free GitHub-account for our course. Please follow the instructions be
 - [Install GitHub desktop to synchronize your machine with GitHub](https://desktop.github.com/)
 ```
 
+### GitHub SSH Key
+
+Using the SSH protocol, you can connect and authenticate to remote servers and services from your terminal. With SSH keys, you can connect to GitHub without supplying your username and personal access token at each visit.
+
+1. [Check for existing SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys)
+1. [Generate a SSH-Key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+1. [Add a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+1. [Test connection](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection)
+
+
 ## Cookiecutter
 
 Cookiecutter is a command-line utility that creates projects from cookiecutters (project templates), e.g. creating a Python package project from a Python package project template.
