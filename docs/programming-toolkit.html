@@ -496,14 +496,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="anaconda">
 <h2>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this headline">¶</a></h2>
-<p>The open-source <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a> Individual Edition Distribution is one of the easiest ways to perform Python data science projects since it already includes Python and the most important modules we need.</p>
+<p>The open-source <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda Individual Edition</a> distribution is one of the easiest ways to perform data science projects. It already includes Python and the most important modules we need.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Anaconda is a data science toolkit which already includes most of the data science modules we need.</p>
 </div>
 <p>Furthermore, Anaconda’s package manager <code class="docutils literal notranslate"><span class="pre">conda</span></code> makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called virtual environments).</p>
-<p><code class="docutils literal notranslate"><span class="pre">conda</span></code> analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2,0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done.</p>
-<p><em>If you already have Anaconda on your machine, make sure that you use the latest version (in our course, we use Python 3.9 but Python 3.8 or 3.7 is also fine). In your terminal, type <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">--version</span></code> to see which Python version you are using in your Anaconda base environment.</em></p>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span></code> analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2,0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done. Instead of conda, you can also use <code class="docutils literal notranslate"><span class="pre">pip</span></code> (the standard package installer for Python) to install packages. Note that you should only use either conda or pip in one environment.</p>
+<p><em>If you already have Anaconda on your machine, make sure that you use the latest version (in our course, we use Python 3.9 but Python 3.8 is also fine). In your terminal, type <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">--version</span></code> to see which Python version you are using in your Anaconda base environment.</em></p>
 <p><em>You may also uninstall your current Anaconda environment from your machine and install the latest version: here a guide of how to <a class="reference external" href="https://docs.anaconda.com/anaconda/install/uninstall/">uninstall Anaconda</a>.</em></p>
 <div class="tip admonition">
 <p class="admonition-title">To do</p>
@@ -540,9 +540,13 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>If you want to <strong>install new modules</strong>, always use conda (and not the package installer for Python: <a class="reference external" href="https://pypi.org/project/pip/">pip</a>). Here is an example of how to install scikit-learn <a class="reference external" href="https://anaconda.org/anaconda/scikit-learn">see conda documentation</a></p></li>
+<li><p>If you want to <strong>install new modules</strong> in your base environment, you should always use conda (and not the package installer for Python: <a class="reference external" href="https://pypi.org/project/pip/">pip</a>). Here is an example of how to install scikit-learn <a class="reference external" href="https://anaconda.org/anaconda/scikit-learn">see conda documentation</a></p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c anaconda scikit-learn
+</pre></div>
+</div>
+<p>Or, if you want to install a specific version</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c anaconda scikit-learn<span class="o">=</span><span class="m">1</span>.0.2
 </pre></div>
 </div>
 </div>
