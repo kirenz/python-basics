@@ -84,7 +84,7 @@ Review this sites to learn more about Markdown:
 
 ## Anaconda
 
-The open-source [Anaconda](https://www.anaconda.com/products/individual) Individual Edition Distribution is one of the easiest ways to perform Python data science projects since it already includes Python and the most important modules we need. 
+The open-source [Anaconda Individual Edition](https://www.anaconda.com/products/individual) distribution is one of the easiest ways to perform data science projects. It already includes Python and the most important modules we need. 
 
 :::{note}
 Anaconda is a data science toolkit which already includes most of the data science modules we need.
@@ -92,9 +92,10 @@ Anaconda is a data science toolkit which already includes most of the data scien
 
 Furthermore, Anaconda's package manager `conda` makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called virtual environments). 
  
-`conda` analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2,0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done.
+`conda` analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2,0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done. Instead of conda, you can also use `pip` (the standard package installer for Python) to install packages. Note that you should only use either conda or pip in one environment.
 
-*If you already have Anaconda on your machine, make sure that you use the latest version (in our course, we use Python 3.9 but Python 3.8 or 3.7 is also fine). In your terminal, type `python --version` to see which Python version you are using in your Anaconda base environment.* 
+
+*If you already have Anaconda on your machine, make sure that you use the latest version (in our course, we use Python 3.9 but Python 3.8 is also fine). In your terminal, type `python --version` to see which Python version you are using in your Anaconda base environment.* 
 
 *You may also uninstall your current Anaconda environment from your machine and install the latest version: here a guide of how to [uninstall Anaconda](https://docs.anaconda.com/anaconda/install/uninstall/).*
 
@@ -140,10 +141,16 @@ conda update --all
 conda update scikit-learn
 ```
 
-- If you want to **install new modules**, always use conda (and not the package installer for Python: [pip](https://pypi.org/project/pip/)). Here is an example of how to install scikit-learn [see conda documentation](https://anaconda.org/anaconda/scikit-learn)
+- If you want to **install new modules** in your base environment, you should always use conda (and not the package installer for Python: [pip](https://pypi.org/project/pip/)). Here is an example of how to install scikit-learn [see conda documentation](https://anaconda.org/anaconda/scikit-learn)
 
 ```bash
 conda install -c anaconda scikit-learn
+```
+
+Or, if you want to install a specific version
+
+```bash
+conda install -c anaconda scikit-learn=1.0.2
 ```
 
 
