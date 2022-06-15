@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Programming toolkit &#8212; Python basics</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,19 +37,20 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Syntax" href="syntax.html" />
@@ -63,7 +62,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +85,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +106,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Welcome
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Toolkit
  </span>
@@ -191,90 +206,180 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/docs/programming-toolkit.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/kirenz/python-basics"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/kirenz/python-basics/issues/new?title=Issue%20on%20page%20%2Fdocs/programming-toolkit.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/kirenz/python-basics"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/kirenz/python-basics/issues/new?title=Issue%20on%20page%20%2Fdocs/programming-toolkit.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/docs/programming-toolkit.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#python">
    Python
@@ -339,12 +444,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Programming toolkit</h1>
@@ -425,14 +529,15 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="programming-toolkit">
-<h1>Programming toolkit<a class="headerlink" href="#programming-toolkit" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="programming-toolkit">
+<h1>Programming toolkit<a class="headerlink" href="#programming-toolkit" title="Permalink to this headline">#</a></h1>
 <p>This section contains an overview about the programming toolkit you will need for our course. Please read the instructions and complete the tasks listed in the yellow <em>To do</em> boxes.</p>
-<div class="section" id="python">
-<h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<section id="python">
+<h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h2>
 <p>Python is an object-oriented language (an object is an entity that contains data along with associated metadata and/or functionality).</p>
 <p>One thing that distinguishes Python from many other programming languages is that it is interpreted rather than compiled. This means that it is executed line by line which is particular useful for data analysis, as well as the creation of interactive, executable documents like Jupyter Notebooks.</p>
 <div class="admonition note">
@@ -440,9 +545,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Python is an interpreted language. The Python interpreter runs a program by executing one statement at a time.</p>
 </div>
 <p>On top of this, there is a broad ecosystem of third-party tools and modules (like Jupyter Notebook) that offer more specialized data science functionality.</p>
-</div>
-<div class="section" id="jupyter-notebook">
-<h2>Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="jupyter-notebook">
+<h2>Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://jupyter.org/">Jupyter Notebook</a> is an open-source application that allows you to create and share documents that contain code, equations, visualizations and narrative text.</p>
 <br>
 <a class="bg-primary mb-1 reference internal image-reference" href="../_images/jupyter.png"><img alt="jupyter" class="bg-primary mb-1 align-center" src="../_images/jupyter.png" style="width: 300px;" /></a>
@@ -454,9 +559,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>code output</p></li>
 </ol>
 <p>Note that we will use Jupyter Notebook inside the coding editor Visual Studio Code.</p>
-</div>
-<div class="section" id="colab">
-<h2>Colab<a class="headerlink" href="#colab" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="colab">
+<h2>Colab<a class="headerlink" href="#colab" title="Permalink to this headline">#</a></h2>
 <p>Colaboratory, or “Colab” for short, is a free to use product from Google Research. Colab allows anybody to write and execute python code through the browser, and is especially well suited to perform data analysis and machine learning.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -471,9 +576,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><a class="reference external" href="https://colab.research.google.com/notebooks/basic_features_overview.ipynb">Colab basic features overview</a></p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="markdown">
-<h2>Markdown<a class="headerlink" href="#markdown" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="markdown">
+<h2>Markdown<a class="headerlink" href="#markdown" title="Permalink to this headline">#</a></h2>
 <p>Markdown is one of the world’s most popular markup languages used in data science. Jupyter Notebooks use Markdown to provide an unified authoring framework for data science, combining code, its results, and commentary in Markdown.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -493,9 +598,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><a class="reference external" href="https://commonmark.org/help/">Interactive 10 minute Markdown tutorial</a></p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="anaconda">
-<h2>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="anaconda">
+<h2>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this headline">#</a></h2>
 <p>The open-source <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda Individual Edition</a> distribution is one of the easiest ways to perform data science projects. It already includes Python and the most important modules we need.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -549,9 +654,9 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c anaconda scikit-learn<span class="o">=</span><span class="m">1</span>.0.2
 </pre></div>
 </div>
-</div>
-<div class="section" id="visual-studio-code">
-<h2>Visual Studio Code<a class="headerlink" href="#visual-studio-code" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="visual-studio-code">
+<h2>Visual Studio Code<a class="headerlink" href="#visual-studio-code" title="Permalink to this headline">#</a></h2>
 <p>Visual Studio Code (also called Code) is a powerful source code editor which runs on your desktop and is available for Windows, macOS and Linux. It comes with a rich ecosystem of extensions for Python and we use them to write our Python code.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -601,9 +706,9 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;editor.bracketPairColorization.enabled&quot;</span>: <span class="nb">true</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="command-line-interface">
-<h2>Command-line interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="command-line-interface">
+<h2>Command-line interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">#</a></h2>
 <p>Operating systems like Windows and MacOS implement a command-line interface (other names for the command line are: cmd, CLI, prompt, console or terminal) in a shell for interactive access to operating system functions or services.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -678,9 +783,9 @@ const thebe_selector_output = ".output, .cell_output"
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="git-and-github">
-<h2>Git and GitHub<a class="headerlink" href="#git-and-github" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="git-and-github">
+<h2>Git and GitHub<a class="headerlink" href="#git-and-github" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://github.com/">GitHub</a> is a provider of internet hosting for software development and version control using Git. We will use GitHub as a platform for web hosting and collaboration and as our course management system.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -709,8 +814,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><a class="reference external" href="https://desktop.github.com/">Install GitHub desktop to synchronize your machine with GitHub</a></p></li>
 </ul>
 </div>
-<div class="section" id="github-ssh-key">
-<h3>GitHub SSH Key<a class="headerlink" href="#github-ssh-key" title="Permalink to this headline">¶</a></h3>
+<section id="github-ssh-key">
+<h3>GitHub SSH Key<a class="headerlink" href="#github-ssh-key" title="Permalink to this headline">#</a></h3>
 <p>Using the SSH protocol, you can connect and authenticate to remote servers and services from your terminal. With SSH keys, you can connect to GitHub without supplying your username and personal access token at each visit.</p>
 <ol class="simple">
 <li><p><a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys">Check for existing SSH keys</a></p></li>
@@ -718,10 +823,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">Add a new SSH key</a></p></li>
 <li><p><a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection">Test connection</a></p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="cookiecutter">
-<h2>Cookiecutter<a class="headerlink" href="#cookiecutter" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="cookiecutter">
+<h2>Cookiecutter<a class="headerlink" href="#cookiecutter" title="Permalink to this headline">#</a></h2>
 <p>Cookiecutter is a command-line utility that creates projects from cookiecutters (project templates), e.g. creating a Python package project from a Python package project template.</p>
 <p>Here we use the <code class="docutils literal notranslate"><span class="pre">cookiecutter-data-science</span></code> to create a logical, reasonably standardized, but flexible project structure for doing and sharing data science work. It creates the following folder structure:</p>
 <div class="highlight-nohighlight notranslate"><div class="highlight"><pre><span></span>├── LICENSE
@@ -781,25 +886,25 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cookiecutter -c v1 https://github.com/drivendata/cookiecutter-data-science
 </pre></div>
 </div>
-</div>
-<div class="section" id="stackoverflow">
-<h2>Stackoverflow<a class="headerlink" href="#stackoverflow" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="stackoverflow">
+<h2>Stackoverflow<a class="headerlink" href="#stackoverflow" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://stackoverflow.com/">Stackoverflow</a> is a public platform with a massive collection of coding questions &amp; answers. So whenever you run into issues with your code, Stackoverlow is a great place to find answers!</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A community-based space to find and contribute answers to technical challenges.</p>
 </div>
 <p>The website serves as a platform for users to ask and answer questions, and, through membership and active participation, to vote questions and answers up or down similar to <a class="reference external" href="https://www.reddit.com/">Reddit</a> and edit questions and answers in a fashion similar to a wiki.</p>
-</div>
-<div class="section" id="stay-up-to-data">
-<h2>Stay up to data<a class="headerlink" href="#stay-up-to-data" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="stay-up-to-data">
+<h2>Stay up to data<a class="headerlink" href="#stay-up-to-data" title="Permalink to this headline">#</a></h2>
 <p>To stay up to date in Data Science, here two free weekly newsletters featuring curated news, articles and jobs related to Data Science:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.datascienceweekly.org/">Data science weekly</a></p></li>
 <li><p><a class="reference external" href="https://dataelixir.com/">Data Elixir</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -823,9 +928,11 @@ const thebe_selector_output = ".output, .cell_output"
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -841,24 +948,28 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jan Kirenz<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Jan Kirenz<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

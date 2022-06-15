@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Semantics &#8212; Python basics</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,19 +37,20 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Overview" href="modules.html" />
@@ -63,7 +62,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +85,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +106,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Welcome
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Toolkit
  </span>
@@ -191,106 +206,209 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/docs/semantics.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/kirenz/python-basics"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/kirenz/python-basics/issues/new?title=Issue%20on%20page%20%2Fdocs/semantics.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/kirenz/python-basics/blob/main/docs/semantics.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://colab.research.google.com/github/kirenz/python-basics/blob/main/docs/semantics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/kirenz/python-basics"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/kirenz/python-basics/issues/new?title=Issue%20on%20page%20%2Fdocs/semantics.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/docs/semantics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#variables-as-pointers">
    Variables as pointers
@@ -463,12 +581,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Semantics</h1>
@@ -657,18 +774,19 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="semantics">
-<h1>Semantics<a class="headerlink" href="#semantics" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="semantics">
+<h1>Semantics<a class="headerlink" href="#semantics" title="Permalink to this headline">#</a></h1>
 <p><em>This short tutorial is a very brief exploration of the essential features of Python semantics. It is mainly based on content from the App <a class="reference external" href="https://tinkerstellar.com">Tinkerstellar</a> by Alex Staravoitau, Jack VanderPlas’s <a class="reference external" href="https://jakevdp.github.io/WhirlwindTourOfPython/">Whirlwind Tour of Python</a> and <a class="reference external" href="https://wesmckinney.com/book/">Python for Data Analysis</a> by Wes McKinney.</em></p>
 <ul class="simple">
 <li><p>Semantics of a language involve the meaning of the statements</p></li>
 <li><p>This section will cover the semantics of variables and objects, which are the main ways you store, reference, and operate on data within a Python script.</p></li>
 </ul>
-<div class="section" id="variables-as-pointers">
-<h2>Variables as pointers<a class="headerlink" href="#variables-as-pointers" title="Permalink to this headline">¶</a></h2>
+<section id="variables-as-pointers">
+<h2>Variables as pointers<a class="headerlink" href="#variables-as-pointers" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Assigning variables: putting a variable name to the left of the equals (=) sign</p></li>
 <li><p>Variables are best thought of not as containers but as pointers.</p></li>
@@ -782,9 +900,9 @@ This is referred to as object introspection.</p></li>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="variables-of-simple-types">
-<h2>Variables of simple types<a class="headerlink" href="#variables-of-simple-types" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="variables-of-simple-types">
+<h2>Variables of simple types<a class="headerlink" href="#variables-of-simple-types" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Numbers, strings, and other simple types are immutable: you can’t change their value – you can only change what values the variables point to.</p></li>
 <li><p>So, for example, it’s perfectly safe to do operations like the following:</p></li>
@@ -811,9 +929,9 @@ y = 10
 <li><p>We are rather changing the variable <code class="docutils literal notranslate"><span class="pre">x</span></code> so that it points to a new integer object with value 15.</p></li>
 <li><p>For this reason, the value of y is not affected by the operation.</p></li>
 </ul>
-</div>
-<div class="section" id="python-types">
-<h2>Python types<a class="headerlink" href="#python-types" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="python-types">
+<h2>Python types<a class="headerlink" href="#python-types" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Python is an object-oriented programming language, and in Python everything is an object</p></li>
 <li><p>An object is an entity that contains data along with associated metadata and/or functionality.</p></li>
@@ -842,9 +960,9 @@ x = 3.14159, type is float
 <ul class="simple">
 <li><p>Python has types and the types are linked not to the variable names but to the objects themselves.</p></li>
 </ul>
-</div>
-<div class="section" id="attributes-and-methods">
-<h2>Attributes and methods<a class="headerlink" href="#attributes-and-methods" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="attributes-and-methods">
+<h2>Attributes and methods<a class="headerlink" href="#attributes-and-methods" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>In Python everything is an object: every entity has some metadata (called attributes) and associated functionality (called methods).</p></li>
 <li><p>Methods are like attributes, except they are functions that you can call using opening and closing parentheses.</p></li>
@@ -865,9 +983,9 @@ x = 3.14159, type is float
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="artihmetic-operations">
-<h2>Artihmetic operations<a class="headerlink" href="#artihmetic-operations" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="artihmetic-operations">
+<h2>Artihmetic operations<a class="headerlink" href="#artihmetic-operations" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Semantics of some arithmetic operators:</p></li>
 </ul>
@@ -946,9 +1064,9 @@ Floor division:  5
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="comparison-operations">
-<h2>Comparison operations<a class="headerlink" href="#comparison-operations" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="comparison-operations">
+<h2>Comparison operations<a class="headerlink" href="#comparison-operations" title="Permalink to this headline">#</a></h2>
 <p>Standard comparison operators return Boolean values True and False:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1011,9 +1129,9 @@ Is 66 odd?  False
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="simple-value-types">
-<h2>Simple value types<a class="headerlink" href="#simple-value-types" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="simple-value-types">
+<h2>Simple value types<a class="headerlink" href="#simple-value-types" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>All Python objects have type information attached.</p></li>
 <li><p>Here are the built-in simple types offered by Python:</p></li>
@@ -1048,9 +1166,9 @@ Is 66 odd?  False
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="dates-and-time">
-<h2>Dates and time<a class="headerlink" href="#dates-and-time" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="dates-and-time">
+<h2>Dates and time<a class="headerlink" href="#dates-and-time" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>The built-in Python datetime module provides datetime, date, and time types.</p></li>
 <li><p>The datetime type combines the information stored in date and time and is the most commonly used:</p></li>
@@ -1133,9 +1251,9 @@ Minute: 30
 <li><p>%F:  Shortcut for %Y-%m-%d (e.g., 2012-4-18)</p></li>
 <li><p>%D:  Shortcut for %m/%d/%y (e.g., 04/18/12)</p></li>
 </ul>
-</div>
-<div class="section" id="compound-types">
-<h2>Compound types<a class="headerlink" href="#compound-types" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="compound-types">
+<h2>Compound types<a class="headerlink" href="#compound-types" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Python has several built-in compound types, which act as containers for other types.</p></li>
 <li><p>Round, square, and curly brackets have distinct meanings when it comes to the type of collection produced:</p></li>
@@ -1166,14 +1284,14 @@ Minute: 30
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="control-flow">
-<h2>Control flow<a class="headerlink" href="#control-flow" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="control-flow">
+<h2>Control flow<a class="headerlink" href="#control-flow" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>With control flow, you can execute certain code blocks conditionally and/or repeatedly.</p></li>
 </ul>
-<div class="section" id="conditional-statements-if-elif-else">
-<h3>Conditional statements: if-elif-else<a class="headerlink" href="#conditional-statements-if-elif-else" title="Permalink to this headline">¶</a></h3>
+<section id="conditional-statements-if-elif-else">
+<h3>Conditional statements: if-elif-else<a class="headerlink" href="#conditional-statements-if-elif-else" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Conditional if-elif-else statements, often referred to as if-then statements, allow the programmer to execute certain pieces of code depending on some Boolean condition.</p></li>
 <li><p>A basic example of a Python conditional statement is this:</p></li>
@@ -1202,9 +1320,9 @@ Minute: 30
 <ul class="simple">
 <li><p>Note especially the use of colons (:) and whitespace to denote separate blocks of code.</p></li>
 </ul>
-</div>
-<div class="section" id="loops">
-<h3>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="loops">
+<h3>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Loops are a way to repeatedly execute some code statement.</p></li>
 <li><p>So, for example, if we’d like to print each of the items in a list, we can use a for loop:</p></li>
@@ -1279,9 +1397,9 @@ Range from 0 to 10 by 2:  [0, 2, 4, 6, 8]
 <ul class="simple">
 <li><p>The argument of the while loop is evaluated as a boolean statement, and the loop is executed until the statement evaluates to False.</p></li>
 </ul>
-</div>
-<div class="section" id="continue">
-<h3>Continue<a class="headerlink" href="#continue" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="continue">
+<h3>Continue<a class="headerlink" href="#continue" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>There are two useful statements that can be used within loops to fine-tune how they are executed:</p>
 <ul>
@@ -1308,9 +1426,9 @@ Range from 0 to 10 by 2:  [0, 2, 4, 6, 8]
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="break">
-<h3>Break<a class="headerlink" href="#break" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="break">
+<h3>Break<a class="headerlink" href="#break" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>The break statement breaks-out of the loop entirely.</p></li>
 <li><p>Here is an example of a break statement used for a less trivial task:</p>
@@ -1344,10 +1462,10 @@ Range from 0 to 10 by 2:  [0, 2, 4, 6, 8]
 <ul class="simple">
 <li><p>Notice that we use a while True loop, which will loop forever unless we have a break statement!</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>One way to organize our Python code and to make it more readable and reusable is to factor-out useful pieces into reusable functions.</p></li>
 <li><p>In this section we will cover two ways of creating functions:</p>
@@ -1390,8 +1508,8 @@ Range from 0 to 10 by 2:  [0, 2, 4, 6, 8]
 <ul class="simple">
 <li><p>When non-keyword arguments are used together with keyword arguments, the keyword arguments must come at the end.</p></li>
 </ul>
-<div class="section" id="defining-functions">
-<h3>Defining functions<a class="headerlink" href="#defining-functions" title="Permalink to this headline">¶</a></h3>
+<section id="defining-functions">
+<h3>Defining functions<a class="headerlink" href="#defining-functions" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Functions are defined with the def statement</p></li>
 <li><p>It is good practice to include a description of your function (<a class="reference external" href="https://www.python.org/dev/peps/pep-0257/#what-is-a-docstring">docstring</a>) at the top oy your function’s body:</p></li>
@@ -1517,9 +1635,9 @@ Range from 0 to 10 by 2:  [0, 2, 4, 6, 8]
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="default-argument-values">
-<h3>Default argument values<a class="headerlink" href="#default-argument-values" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="default-argument-values">
+<h3>Default argument values<a class="headerlink" href="#default-argument-values" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Often when defining a function, there are certain values that we want the function to use most of the time, but we’d also like to give the user some flexibility.</p></li>
 <li><p>In this case, we can use default values for arguments.</p></li>
@@ -1582,9 +1700,9 @@ Range from 0 to 10 by 2:  [0, 2, 4, 6, 8]
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="flexible-arguments">
-<h3>Flexible arguments<a class="headerlink" href="#flexible-arguments" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="flexible-arguments">
+<h3>Flexible arguments<a class="headerlink" href="#flexible-arguments" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Sometimes you might wish to write a function in which you don’t initially know how many arguments the user will pass.</p></li>
 <li><p>In this case, you can use the special form *args and **kwargs to catch all arguments that are passed. Here is an example:</p></li>
@@ -1624,9 +1742,9 @@ kwargs =  {&#39;keyword&#39;: 2}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="asterisk">
-<h3>Asterisk<a class="headerlink" href="#asterisk" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="asterisk">
+<h3>Asterisk<a class="headerlink" href="#asterisk" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>In case of *args and **kwargs, it is not the names args and kwargs that are important, but the * characters preceding them.</p></li>
 <li><p>args and kwargs are just the variable names often used by convention, short for “arguments” and “keyword arguments”:</p>
@@ -1653,16 +1771,42 @@ kwargs =  {&#39;pi&#39;: 3.14}
 </div>
 </div>
 </div>
+</section>
+<section id="anonymous-lambda-functions">
+<h3>Anonymous (lambda) functions<a class="headerlink" href="#anonymous-lambda-functions" title="Permalink to this headline">#</a></h3>
+<p>A lambda function is a small anonymous function. It can take any number of arguments, but can only have one expression:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">arguments</span> <span class="p">:</span> <span class="n">expression</span>
+</pre></div>
 </div>
-<div class="section" id="anonymous-lambda-functions">
-<h3>Anonymous (lambda) functions<a class="headerlink" href="#anonymous-lambda-functions" title="Permalink to this headline">¶</a></h3>
+<p>You can use it to define short, one-off functions with the lambda statement (without using def).</p>
+<p>Example:</p>
 <ul class="simple">
-<li><p>Defining short, one-off functions with the lambda statement (without using def):</p></li>
+<li><p>Add 2 to argument x, and return the result:</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">add</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-<span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_lambda</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">my_lambda</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lambda functions can take any number of arguments:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_addition</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="n">my_addition</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1677,7 +1821,7 @@ kwargs =  {&#39;pi&#39;: 3.14}
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_addition</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 </pre></div>
 </div>
@@ -1698,14 +1842,14 @@ kwargs =  {&#39;pi&#39;: 3.14}
 </div>
 <ul class="simple">
 <li><p>Now suppose we want to sort this data</p></li>
-<li><p>Python has a <code class="docutils literal notranslate"><span class="pre">sorted</span></code> function, which can order a list of integers, for example</p></li>
+<li><p>Python has a <code class="docutils literal notranslate"><span class="pre">sorted</span></code> function, which can order a list of integers</p></li>
 <li><p>But dictionaries are not orderable: we need a way to tell the function how to sort our data</p></li>
 <li><p>We can do this by specifying the key function, a function which given an item returns the sorting key for that item:</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sort alphabetically by first name</span>
-<span class="nb">sorted</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="p">])</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1720,7 +1864,7 @@ kwargs =  {&#39;pi&#39;: 3.14}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sort by year of birth</span>
-<span class="nb">sorted</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="s1">&#39;YOB&#39;</span><span class="p">])</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="s1">&#39;YOB&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1732,13 +1876,13 @@ kwargs =  {&#39;pi&#39;: 3.14}
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="iterator-syntax">
-<h2>Iterator syntax<a class="headerlink" href="#iterator-syntax" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="iterator-syntax">
+<h2>Iterator syntax<a class="headerlink" href="#iterator-syntax" title="Permalink to this headline">#</a></h2>
 <p>Often an important piece of data analysis is repeating a similar calculation, over and over, in an automated fashion.</p>
-<div class="section" id="range">
-<h3>Range<a class="headerlink" href="#range" title="Permalink to this headline">¶</a></h3>
+<section id="range">
+<h3>Range<a class="headerlink" href="#range" title="Permalink to this headline">#</a></h3>
 <p>For example, you may have a table of a names that you’d like to split into first and last, or perhaps of dates that you’d like to convert to some standard format.</p>
 <p>One of Python’s answers to this is the iterator syntax. We’ve seen this already with the range iterator:</p>
 <div class="cell docutils container">
@@ -1755,10 +1899,10 @@ kwargs =  {&#39;pi&#39;: 3.14}
 </div>
 </div>
 <p>range is not a list, but is something called an iterator, and learning how it works is key to understanding a wide class of very useful Python functionality.</p>
-</div>
-</div>
-<div class="section" id="iterating-over-lists">
-<h2>Iterating over lists<a class="headerlink" href="#iterating-over-lists" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="iterating-over-lists">
+<h2>Iterating over lists<a class="headerlink" href="#iterating-over-lists" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Iterators are perhaps most easily understood in the concrete case of iterating through a list.</p></li>
 <li><p>Consider the following:</p></li>
@@ -1797,8 +1941,8 @@ kwargs =  {&#39;pi&#39;: 3.14}
 <ul class="simple">
 <li><p>The familiar “for x in y” syntax allows us to repeat some operation for each value in the list.</p></li>
 </ul>
-<div class="section" id="enumerate">
-<h3>Enumerate<a class="headerlink" href="#enumerate" title="Permalink to this headline">¶</a></h3>
+<section id="enumerate">
+<h3>Enumerate<a class="headerlink" href="#enumerate" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Sometimes you need to iterate not only the values in an array, but also keep track of the index:</p></li>
 </ul>
@@ -1820,9 +1964,9 @@ kwargs =  {&#39;pi&#39;: 3.14}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="zip">
-<h3>Zip<a class="headerlink" href="#zip" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="zip">
+<h3>Zip<a class="headerlink" href="#zip" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Other times, you may have multiple lists that you want to iterate over simultaneously.</p></li>
 <li><p>Use the zip iterator, which zips together iterables:</p></li>
@@ -1846,9 +1990,9 @@ kwargs =  {&#39;pi&#39;: 3.14}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="map">
-<h3>Map<a class="headerlink" href="#map" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="map">
+<h3>Map<a class="headerlink" href="#map" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>The map iterator takes a function and applies it to the values in an iterator:</p></li>
 </ul>
@@ -1880,9 +2024,9 @@ kwargs =  {&#39;pi&#39;: 3.14}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="filter">
-<h3>Filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="filter">
+<h3>Filter<a class="headerlink" href="#filter" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>The filter iterator looks similar, except it only passes-through values for which the filter function evaluates to True:</p></li>
 </ul>
@@ -1902,9 +2046,9 @@ kwargs =  {&#39;pi&#39;: 3.14}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="list-comprehensions">
-<h3>List comprehensions<a class="headerlink" href="#list-comprehensions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="list-comprehensions">
+<h3>List comprehensions<a class="headerlink" href="#list-comprehensions" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>List comprehensions are a way to compress a list-building for-loop into a single short, readable line.</p></li>
 <li><p>For example, here is a loop that constructs a list of the first 12 square integers:</p></li>
@@ -1936,10 +2080,10 @@ kwargs =  {&#39;pi&#39;: 3.14}
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="multiple-iteration">
-<h2>Multiple iteration<a class="headerlink" href="#multiple-iteration" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="multiple-iteration">
+<h2>Multiple iteration<a class="headerlink" href="#multiple-iteration" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Sometimes you want to build a list not just from one value, but from two.</p></li>
 <li><p>To do this, simply add another for expression in the comprehension:</p></li>
@@ -1960,9 +2104,9 @@ kwargs =  {&#39;pi&#39;: 3.14}
 <li><p>Notice that the second for expression acts as the interior index, varying the fastest in the resulting list</p></li>
 <li><p>This type of construction can be extended to three, four, or more iterators within the comprehension</p></li>
 </ul>
-</div>
-<div class="section" id="manipulate-strings">
-<h2>Manipulate strings<a class="headerlink" href="#manipulate-strings" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="manipulate-strings">
+<h2>Manipulate strings<a class="headerlink" href="#manipulate-strings" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>First, we create a list of somewhat messy strings:</p></li>
 </ul>
@@ -2090,9 +2234,9 @@ West virginia
 <li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#working-with-text-data">Working with text data in pandas</a></p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="errors-and-exceptions">
-<h2>Errors and Exceptions<a class="headerlink" href="#errors-and-exceptions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="errors-and-exceptions">
+<h2>Errors and Exceptions<a class="headerlink" href="#errors-and-exceptions" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>No matter your skill as a programmer, you will eventually make a coding mistake. Such mistakes come in three basic flavors:</p></li>
 </ul>
@@ -2105,8 +2249,8 @@ West virginia
 <li><p>In this section we are going to focus on how to deal cleanly with runtime errors.</p></li>
 <li><p>As we’ll see, Python handles runtime errors via its exception handling framework.</p></li>
 </ul>
-<div class="section" id="runtime-errors">
-<h3>Runtime errors<a class="headerlink" href="#runtime-errors" title="Permalink to this headline">¶</a></h3>
+<section id="runtime-errors">
+<h3>Runtime errors<a class="headerlink" href="#runtime-errors" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>If you’ve done any coding in Python, you’ve likely come across runtime errors.</p></li>
 <li><p>They can happen in a lot of ways. For example, if you try to reference an undefined variable:</p></li>
@@ -2142,9 +2286,9 @@ West virginia
 <li><p>Note that in each case, Python is not simply indicate that an error happened, but also includes information about what exactly went wrong, along with the exact line of code where the error happened.</p></li>
 <li><p>Having access to meaningful errors like this is immensely useful when trying to trace the root of problems in your code.</p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2168,9 +2312,11 @@ West virginia
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="syntax.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2186,24 +2332,28 @@ West virginia
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jan Kirenz<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Jan Kirenz<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
