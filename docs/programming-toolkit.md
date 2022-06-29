@@ -82,17 +82,38 @@ Review this sites to learn more about Markdown:
 - [Interactive 10 minute Markdown tutorial](https://commonmark.org/help/)
 ```
 
+
+
+## Miniforge
+
+The open-source project [Miniforge](https://github.com/conda-forge/miniforge) is one of the easiest ways to get started with data science projects. 
+
+It is a small, bootstrap version of the data science platform Anaconda (see below) that includes only Python, the open source package management system [conda](https://docs.conda.io/en/latest/) and a small number of other useful packages. 
+
+Miniforge uses Anaconda's package manager `conda`, which makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called virtual environments). `conda` analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2,0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done. Instead of conda, you can also use `pip` (the standard package installer for Python) to install packages. Note that you should only use either conda or pip in one environment.
+
+:::{note}
+Miniforge is an community-led alternative to the data science platforms Anaconda and Miniconda, provided by Anaconda, Inc.
+:::
+
+Compared to Anaconda, Miniforge provides more up-to-date packages, and is more user-friendly. Therefore, I recommend using Miniforge for data science projects.
+
+```{admonition} To do
+:class: tip
+
+Install the latest version of the Miniforge
+
+- [Miniforge installation tutorial](https://kirenz.github.io/codelabs/codelabs/miniforge-setup/#0)
+
+```
+
 ## Anaconda
 
-The open-source [Anaconda Individual Edition](https://www.anaconda.com/products/individual) distribution is one of the easiest ways to perform data science projects. It already includes Python and the most important modules we need. 
+As an alternative to Miniforge, you can also use the open-source [Anaconda Individual Edition](https://www.anaconda.com/products/individual) distribution which includes Python and the most important data science modules. 
 
 :::{note}
 Anaconda is a data science toolkit which already includes most of the data science modules we need.
 :::
-
-Furthermore, Anaconda's package manager `conda` makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called virtual environments). 
- 
-`conda` analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2,0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done. Instead of conda, you can also use `pip` (the standard package installer for Python) to install packages. Note that you should only use either conda or pip in one environment.
 
 
 *If you already have Anaconda on your machine, make sure that you use the latest version (in our course, we use Python 3.9 but Python 3.8 is also fine). In your terminal, type `python --version` to see which Python version you are using in your Anaconda base environment.* 
