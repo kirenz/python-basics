@@ -401,6 +401,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#miniforge">
+   Miniforge
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#anaconda">
    Anaconda
   </a>
@@ -479,6 +484,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#markdown">
    Markdown
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#miniforge">
+   Miniforge
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -599,15 +609,31 @@ title="Print to PDF"
 </ul>
 </div>
 </section>
+<section id="miniforge">
+<h2>Miniforge<a class="headerlink" href="#miniforge" title="Permalink to this headline">#</a></h2>
+<p>The open-source project <a class="reference external" href="https://github.com/conda-forge/miniforge">Miniforge</a> is one of the easiest ways to get started with data science projects.</p>
+<p>It is a small, bootstrap version of the data science platform Anaconda (see below) that includes only Python, the open source package management system <a class="reference external" href="https://docs.conda.io/en/latest/">conda</a> and a small number of other useful packages.</p>
+<p>Miniforge uses Anaconda’s package manager <code class="docutils literal notranslate"><span class="pre">conda</span></code>, which makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called virtual environments). <code class="docutils literal notranslate"><span class="pre">conda</span></code> analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2,0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done. Instead of conda, you can also use <code class="docutils literal notranslate"><span class="pre">pip</span></code> (the standard package installer for Python) to install packages. Note that you should only use either conda or pip in one environment.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Miniforge is an community-led alternative to the data science platforms Anaconda and Miniconda, provided by Anaconda, Inc.</p>
+</div>
+<p>Compared to Anaconda, Miniforge provides more up-to-date packages, and is more user-friendly. Therefore, I recommend using Miniforge for data science projects.</p>
+<div class="tip admonition">
+<p class="admonition-title">To do</p>
+<p>Install the latest version of the Miniforge</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://kirenz.github.io/codelabs/codelabs/miniforge-setup/#0">Miniforge installation tutorial</a></p></li>
+</ul>
+</div>
+</section>
 <section id="anaconda">
 <h2>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this headline">#</a></h2>
-<p>The open-source <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda Individual Edition</a> distribution is one of the easiest ways to perform data science projects. It already includes Python and the most important modules we need.</p>
+<p>As an alternative to Miniforge, you can also use the open-source <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda Individual Edition</a> distribution which includes Python and the most important data science modules.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Anaconda is a data science toolkit which already includes most of the data science modules we need.</p>
 </div>
-<p>Furthermore, Anaconda’s package manager <code class="docutils literal notranslate"><span class="pre">conda</span></code> makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called virtual environments).</p>
-<p><code class="docutils literal notranslate"><span class="pre">conda</span></code> analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2,0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done. Instead of conda, you can also use <code class="docutils literal notranslate"><span class="pre">pip</span></code> (the standard package installer for Python) to install packages. Note that you should only use either conda or pip in one environment.</p>
 <p><em>If you already have Anaconda on your machine, make sure that you use the latest version (in our course, we use Python 3.9 but Python 3.8 is also fine). In your terminal, type <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">--version</span></code> to see which Python version you are using in your Anaconda base environment.</em></p>
 <p><em>You may also uninstall your current Anaconda environment from your machine and install the latest version: here a guide of how to <a class="reference external" href="https://docs.anaconda.com/anaconda/install/uninstall/">uninstall Anaconda</a>.</em></p>
 <div class="tip admonition">
