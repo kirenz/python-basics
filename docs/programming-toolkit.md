@@ -83,7 +83,6 @@ Review this sites to learn more about Markdown:
 ```
 
 
-
 ## Miniforge
 
 The open-source project [Miniforge](https://github.com/conda-forge/miniforge) is one of the easiest ways to get started with data science projects. 
