@@ -2,6 +2,12 @@
 
 This section contains an overview about the programming toolkit you will need for our course. Please read the instructions and complete the tasks listed in the yellow *To do* boxes.
 
+In particular, you will need to:
+
+- Install [Minifroge](miniforge) (includes Python and some libraries)
+- Install [Visual Studio Code](vscode) (is an IDE)
+- Set up an account at [GitHub](github)
+
 
 ## Python
 
@@ -82,7 +88,7 @@ Review this sites to learn more about Markdown:
 - [Interactive 10 minute Markdown tutorial](https://commonmark.org/help/)
 ```
 
-
+(minifroge)=
 ## Miniforge
 
 The open-source project [Miniforge](https://github.com/conda-forge/miniforge) is one of the easiest ways to get started with data science projects. 
@@ -173,7 +179,7 @@ Or, if you want to install a specific version
 conda install -c anaconda scikit-learn=1.0.2
 ```
 
-
+(vscode)=
 ## Visual Studio Code 
 
 Visual Studio Code (also called Code) is a powerful source code editor which runs on your desktop and is available for Windows, macOS and Linux. It comes with a rich ecosystem of extensions for Python and we use them to write our Python code.
@@ -220,38 +226,7 @@ More VS Code options:
 
 - Pro tips: [25 VS Code Productivity Tips and Speed Hacks](https://www.youtube.com/watch?v=ifTF3ags0XI)
 
-
-## Command-line interface
-
-Operating systems like Windows and MacOS implement a command-line interface (other names for the command line are: cmd, CLI, prompt, console or terminal) in a shell for interactive access to operating system functions or services. 
-
-:::{note}
-A command-line interface (CLI) processes commands to a computer program in the form of lines of text.
-:::
-
-We sometimes use the command line interface so you should be familiar with basic commands. If you aren't familiar with the terminal, read this short introduction to the command-line interface:
-
-```{admonition} To do
-:class: tip
-- [Introduction to the command-line interface](https://tutorial.djangogirls.org/en/intro_to_command_line/)
-```
-
-Here is a summary of some useful commands:
-
-Command (Windows) | Command (Mac OS / Linux) | Description                | Example
------------------ | ------------------------ | -------------------------- | ---------------------------------------------
-exit              | exit                     | close the window           | **exit**
-cd                | cd                       | change directory           | **cd test**, **cd..** (Windows) or **cd ..** (Mac)
-cd                | pwd                      | show the current directory | **cd** (Windows) or **pwd** (Mac OS / Linux)
-dir               | ls                       | list directories/files     | **dir**
-copy              | cp                       | copy file                  | **copy c:\test\test.txt c:\windows\test.txt**
-move              | mv                       | move file                  | **move c:\test\test.txt c:\windows\test.txt**
-mkdir             | mkdir                    | create a new directory     | **mkdir testdirectory**
-rmdir (or del)    | rm                       | delete a file              | **del c:\test\test.txt**
-rmdir /S          | rm -r                    | delete a directory         | **rm -r testdirectory**
-[CMD] /?          | man [CMD]                | get help for a command     | **cd /?** (Windows) or **man cd** (Mac OS / Linux)
-
-
+(github)=
 ## Git and GitHub
 
 [GitHub](https://github.com/) is a provider of internet hosting for software development and version control using Git. We will use GitHub as a platform for web hosting and collaboration and as our course management system.
@@ -293,6 +268,38 @@ Using the SSH protocol, you can connect and authenticate to remote servers and s
 1. [Generate a SSH-Key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 1. [Add a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 1. [Test connection](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection)
+
+
+
+## Command-line interface
+
+Operating systems like Windows and MacOS implement a command-line interface (other names for the command line are: cmd, CLI, prompt, console or terminal) in a shell for interactive access to operating system functions or services. 
+
+:::{note}
+A command-line interface (CLI) processes commands to a computer program in the form of lines of text.
+:::
+
+We sometimes use the command line interface so you should be familiar with basic commands. If you aren't familiar with the terminal, read this short introduction to the command-line interface:
+
+```{admonition} To do
+:class: tip
+- [Introduction to the command-line interface](https://tutorial.djangogirls.org/en/intro_to_command_line/)
+```
+
+Here is a summary of some useful commands:
+
+Command (Windows) | Command (Mac OS / Linux) | Description                | Example
+----------------- | ------------------------ | -------------------------- | ---------------------------------------------
+exit              | exit                     | close the window           | **exit**
+cd                | cd                       | change directory           | **cd test**, **cd..** (Windows) or **cd ..** (Mac)
+cd                | pwd                      | show the current directory | **cd** (Windows) or **pwd** (Mac OS / Linux)
+dir               | ls                       | list directories/files     | **dir**
+copy              | cp                       | copy file                  | **copy c:\test\test.txt c:\windows\test.txt**
+move              | mv                       | move file                  | **move c:\test\test.txt c:\windows\test.txt**
+mkdir             | mkdir                    | create a new directory     | **mkdir testdirectory**
+rmdir (or del)    | rm                       | delete a file              | **del c:\test\test.txt**
+rmdir /S          | rm -r                    | delete a directory         | **rm -r testdirectory**
+[CMD] /?          | man [CMD]                | get help for a command     | **cd /?** (Windows) or **man cd** (Mac OS / Linux)
 
 
 <!--
