@@ -21,7 +21,7 @@
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -37,7 +37,7 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -438,11 +438,6 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cookiecutter">
-   Cookiecutter
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#stackoverflow">
    Stackoverflow
   </a>
@@ -522,11 +517,6 @@ title="Print to PDF"
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cookiecutter">
-   Cookiecutter
-  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#stackoverflow">
@@ -725,18 +715,7 @@ title="Print to PDF"
 <p>More VS Code options:</p>
 <ul class="simple">
 <li><p>Pro tips: <a class="reference external" href="https://www.youtube.com/watch?v=ifTF3ags0XI">25 VS Code Productivity Tips and Speed Hacks</a></p></li>
-<li><p>How to configure <a class="reference external" href="https://code.visualstudio.com/blogs/2021/09/29/bracket-pair-colorization">native bracket pair colorization</a>:</p>
-<ul>
-<li><p>Remove any existing Bracket Pair Colorizer extensions (if you have installed any).</p></li>
-<li><p>Open your user settings: <code class="docutils literal notranslate"><span class="pre">CMD</span> <span class="pre">(CTRL</span> <span class="pre">for</span> <span class="pre">non-Mac</span> <span class="pre">users)</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">P</span></code> and type <code class="docutils literal notranslate"><span class="pre">settings</span></code>.</p></li>
-<li><p>Select `Open settings (JSON)</p></li>
-<li><p>Add the following code:</p></li>
 </ul>
-</li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;editor.bracketPairColorization.enabled&quot;</span>: <span class="nb">true</span>
-</pre></div>
-</div>
 </section>
 <section id="command-line-interface">
 <h2>Command-line interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">#</a></h2>
@@ -854,69 +833,77 @@ title="Print to PDF"
 <li><p><a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">Add a new SSH key</a></p></li>
 <li><p><a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection">Test connection</a></p></li>
 </ol>
-</section>
-</section>
-<section id="cookiecutter">
-<h2>Cookiecutter<a class="headerlink" href="#cookiecutter" title="Permalink to this headline">#</a></h2>
-<p>Cookiecutter is a command-line utility that creates projects from cookiecutters (project templates), e.g. creating a Python package project from a Python package project template.</p>
-<p>Here we use the <code class="docutils literal notranslate"><span class="pre">cookiecutter-data-science</span></code> to create a logical, reasonably standardized, but flexible project structure for doing and sharing data science work. It creates the following folder structure:</p>
-<div class="highlight-nohighlight notranslate"><div class="highlight"><pre><span></span>├── LICENSE
-├── Makefile           &lt;- Makefile with commands like `make data` or `make train`
-├── README.md          &lt;- The top-level README for developers using this project.
+<!--
+## Cookiecutter
+
+Cookiecutter is a command-line utility that creates projects from cookiecutters (project templates), e.g. creating a Python package project from a Python package project template.
+
+Here we use the `cookiecutter-data-science` to create a logical, reasonably standardized, but flexible project structure for doing and sharing data science work. It creates the following folder structure:
+
+
+```nohighlight
+├── LICENSE
+├── Makefile           <- Makefile with commands like `make data` or `make train`
+├── README.md          <- The top-level README for developers using this project.
 ├── data
-│   ├── external       &lt;- Data from third party sources.
-│   ├── interim        &lt;- Intermediate data that has been transformed.
-│   ├── processed      &lt;- The final, canonical data sets for modeling.
-│   └── raw            &lt;- The original, immutable data dump.
+│   ├── external       <- Data from third party sources.
+│   ├── interim        <- Intermediate data that has been transformed.
+│   ├── processed      <- The final, canonical data sets for modeling.
+│   └── raw            <- The original, immutable data dump.
 │
-├── docs               &lt;- A default Sphinx project; see sphinx-doc.org for details
+├── docs               <- A default Sphinx project; see sphinx-doc.org for details
 │
-├── models             &lt;- Trained and serialized models, model predictions, or model summaries
+├── models             <- Trained and serialized models, model predictions, or model summaries
 │
-├── notebooks          &lt;- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator&#39;s initials, and a short `-` delimited description, e.g.
+├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
+│                         the creator's initials, and a short `-` delimited description, e.g.
 │                         `1.0-jqp-initial-data-exploration`.
 │
-├── references         &lt;- Data dictionaries, manuals, and all other explanatory materials.
+├── references         <- Data dictionaries, manuals, and all other explanatory materials.
 │
-├── reports            &lt;- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        &lt;- Generated graphics and figures to be used in reporting
+├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
+│   └── figures        <- Generated graphics and figures to be used in reporting
 │
-├── requirements.txt   &lt;- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze &gt; requirements.txt`
+├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
+│                         generated with `pip freeze > requirements.txt`
 │
-├── setup.py           &lt;- Make this project pip installable with `pip install -e`
-├── src                &lt;- Source code for use in this project.
-│   ├── __init__.py    &lt;- Makes src a Python module
+├── setup.py           <- Make this project pip installable with `pip install -e`
+├── src                <- Source code for use in this project.
+│   ├── __init__.py    <- Makes src a Python module
 │   │
-│   ├── data           &lt;- Scripts to download or generate data
+│   ├── data           <- Scripts to download or generate data
 │   │   └── make_dataset.py
 │   │
-│   ├── features       &lt;- Scripts to turn raw data into features for modeling
+│   ├── features       <- Scripts to turn raw data into features for modeling
 │   │   └── build_features.py
 │   │
-│   ├── models         &lt;- Scripts to train models and then use trained models to make
+│   ├── models         <- Scripts to train models and then use trained models to make
 │   │   │                 predictions
 │   │   ├── predict_model.py
 │   │   └── train_model.py
 │   │
-│   └── visualization  &lt;- Scripts to create exploratory and results oriented visualizations
+│   └── visualization  <- Scripts to create exploratory and results oriented visualizations
 │       └── visualize.py
 │
-└── tox.ini            &lt;- tox file with settings for running tox; see tox.readthedocs.io
-</pre></div>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">To do</p>
-<ul class="simple">
-<li><p>Use conda to install cookiecutter: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">cookiecutter</span></code></p></li>
-<li><p>Read the <a class="reference external" href="http://drivendata.github.io/cookiecutter-data-science/#getting-started">getting started guide</a></p></li>
-</ul>
-</div>
-<p>To start a new project, run this command in the terminal (in the folder you want to create your project):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cookiecutter -c v1 https://github.com/drivendata/cookiecutter-data-science
-</pre></div>
-</div>
+└── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
+```
+
+
+```{admonition} To do
+:class: tip
+
+- Use conda to install cookiecutter: `conda install -c conda-forge cookiecutter` 
+
+- Read the [getting started guide](http://drivendata.github.io/cookiecutter-data-science/#getting-started) 
+```
+
+To start a new project, run this command in the terminal (in the folder you want to create your project):
+
+```bash
+cookiecutter -c v1 https://github.com/drivendata/cookiecutter-data-science
+```
+-->
+</section>
 </section>
 <section id="stackoverflow">
 <h2>Stackoverflow<a class="headerlink" href="#stackoverflow" title="Permalink to this headline">#</a></h2>
@@ -929,7 +916,7 @@ title="Print to PDF"
 </section>
 <section id="stay-up-to-data">
 <h2>Stay up to data<a class="headerlink" href="#stay-up-to-data" title="Permalink to this headline">#</a></h2>
-<p>To stay up to date in Data Science, here two free weekly newsletters featuring curated news, articles and jobs related to Data Science:</p>
+<p>To stay up to date in Data Science, take a look at these two free weekly newsletters featuring curated news, articles and jobs related to Data Science:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.datascienceweekly.org/">Data science weekly</a></p></li>
 <li><p><a class="reference external" href="https://dataelixir.com/">Data Elixir</a></p></li>
