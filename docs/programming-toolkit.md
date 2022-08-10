@@ -4,9 +4,9 @@ This section contains an overview about the programming toolkit you will need fo
 
 In particular, you will need to:
 
-- Install [Minifroge](miniforge) (includes Python and some libraries)
-- Install [Visual Studio Code](vscode) (is an IDE)
-- Set up an account at [GitHub](github)
+1. Install [Minifroge](miniforge) (includes Python and some libraries)
+2. Install [Visual Studio Code](vscode) (is an IDE)
+3. Set up an account at [GitHub](github)
 
 
 ## Python
