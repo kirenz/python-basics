@@ -1,6 +1,6 @@
 # Programming toolkit
 
-This section contains an overview about the programming toolkit you will need for our course. Please read the instructions and complete the tasks listed in the yellow *To do* boxes.
+This section contains an overview about the programming toolkit you will need for our course. Please read all the instructions and complete the tasks listed in the yellow *To do* boxes.
 
 In particular, you will need to:
 
