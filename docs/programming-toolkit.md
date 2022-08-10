@@ -220,16 +220,6 @@ More VS Code options:
 
 - Pro tips: [25 VS Code Productivity Tips and Speed Hacks](https://www.youtube.com/watch?v=ifTF3ags0XI)
 
-- How to configure [native bracket pair colorization](https://code.visualstudio.com/blogs/2021/09/29/bracket-pair-colorization):
-
-  - Remove any existing Bracket Pair Colorizer extensions (if you have installed any).
-  - Open your user settings: `CMD (CTRL for non-Mac users) + Shift + P` and type `settings`. 
-  - Select `Open settings (JSON)
-  - Add the following code:
-
-```bash
-"editor.bracketPairColorization.enabled": true
-```
 
 ## Command-line interface
 
@@ -305,6 +295,7 @@ Using the SSH protocol, you can connect and authenticate to remote servers and s
 1. [Test connection](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection)
 
 
+<!--
 ## Cookiecutter
 
 Cookiecutter is a command-line utility that creates projects from cookiecutters (project templates), e.g. creating a Python package project from a Python package project template.
@@ -373,7 +364,7 @@ To start a new project, run this command in the terminal (in the folder you want
 ```bash
 cookiecutter -c v1 https://github.com/drivendata/cookiecutter-data-science
 ```
-
+-->
 
 ## Stackoverflow
 
@@ -388,7 +379,7 @@ The website serves as a platform for users to ask and answer questions, and, thr
 
 ## Stay up to data
 
-To stay up to date in Data Science, here two free weekly newsletters featuring curated news, articles and jobs related to Data Science:
+To stay up to date in Data Science, take a look at these two free weekly newsletters featuring curated news, articles and jobs related to Data Science:
 
 - [Data science weekly](https://www.datascienceweekly.org/)
 
