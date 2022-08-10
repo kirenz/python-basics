@@ -4,9 +4,9 @@ This section contains an overview about the programming toolkit you will need fo
 
 In particular, you will need to:
 
-1. Install [Minifroge](miniforge) (includes Python and some libraries)
-2. Install [Visual Studio Code](vscode) (is an IDE)
-3. Set up an account at [GitHub](github)
+1. Install [Miniforge](miniforge) (includes Python and some toolkits)
+2. Install [Visual Studio Code](vscode) (a code editor)
+3. Set up an account at [GitHub](github) (for code version control)
 
 
 ## Python
@@ -251,15 +251,13 @@ You need a free GitHub-account for our course. Please follow the instructions be
 :class: tip
 
 - [Create a GitHub account with your HdM-email](https://github.com/join)
-
 - Verify your GitHub email
-- Adjust your GitHub settings
-  - Settings > Emails > Uncheck "Keep my email address private"
-  - Settings > Emails > Update name and photo
-
+- You may also sign up fot the free [student developer pack](https://education.github.com/pack)  
+- Install the [VS Code GitHub extension](https://code.visualstudio.com/docs/editor/github)
 - [Install GitHub desktop to synchronize your machine with GitHub](https://desktop.github.com/)
 ```
 
+<!--
 ### GitHub SSH Key
 
 Using the SSH protocol, you can connect and authenticate to remote servers and services from your terminal. With SSH keys, you can connect to GitHub without supplying your username and personal access token at each visit.
@@ -268,12 +266,12 @@ Using the SSH protocol, you can connect and authenticate to remote servers and s
 1. [Generate a SSH-Key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 1. [Add a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 1. [Test connection](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection)
-
+-->
 
 
 ## Command-line interface
 
-Operating systems like Windows and MacOS implement a command-line interface (other names for the command line are: cmd, CLI, prompt, console or terminal) in a shell for interactive access to operating system functions or services. 
+Operating systems like Windows and macOS implement a command-line interface (other names for the command line are: cmd, CLI, prompt, console or terminal) in a shell for interactive access to operating system functions or services. 
 
 :::{note}
 A command-line interface (CLI) processes commands to a computer program in the form of lines of text.
