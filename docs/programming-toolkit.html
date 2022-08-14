@@ -406,11 +406,6 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#miniforge">
-   Miniforge
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#anaconda">
    Anaconda
   </a>
@@ -433,6 +428,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#stackoverflow">
    Stackoverflow
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#miniforge">
+   Miniforge
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -480,11 +480,6 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#miniforge">
-   Miniforge
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#anaconda">
    Anaconda
   </a>
@@ -510,6 +505,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#miniforge">
+   Miniforge
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#stay-up-to-data">
    Stay up to data
   </a>
@@ -529,7 +529,7 @@ title="Print to PDF"
 <p>This section contains an overview about the programming toolkit you will need for our course. Please read all the instructions and complete the tasks listed in the yellow <em>To do</em> boxes.</p>
 <p>In particular, you will need to:</p>
 <ol class="simple">
-<li><p>Install <a class="reference internal" href="#miniforge"><span class="std std-ref">Miniforge</span></a> (includes Python and some toolkits)</p></li>
+<li><p>Install <a class="reference internal" href="#anaconda"><span class="std std-ref">Anaconda</span></a> (includes Python and some toolkits)</p></li>
 <li><p>Install <a class="reference internal" href="#vscode"><span class="std std-ref">Visual Studio Code</span></a> (a code editor)</p></li>
 <li><p>Set up an account at <a class="reference internal" href="#github"><span class="std std-ref">GitHub</span></a> (for code version control)</p></li>
 </ol>
@@ -596,31 +596,14 @@ title="Print to PDF"
 </ul>
 </div>
 </section>
-<section id="miniforge">
-<span id="id2"></span><h2>Miniforge<a class="headerlink" href="#miniforge" title="Permalink to this headline">#</a></h2>
-<p>The open-source project <a class="reference external" href="https://github.com/conda-forge/miniforge">Miniforge</a> is one of the easiest ways to get started with data science projects.</p>
-<p>It is a small, bootstrap version of the data science platform Anaconda (see below) that includes only Python, the open source package management system <a class="reference external" href="https://docs.conda.io/en/latest/">conda</a> and a small number of other useful packages.</p>
-<p>Miniforge uses Anaconda’s package manager <code class="docutils literal notranslate"><span class="pre">conda</span></code>, which makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called virtual environments). <code class="docutils literal notranslate"><span class="pre">conda</span></code> analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2,0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done. Instead of conda, you can also use <code class="docutils literal notranslate"><span class="pre">pip</span></code> (the standard package installer for Python) to install packages. Note that you should only use either conda or pip in one environment.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Miniforge is an community-led alternative to the data science platforms Anaconda and Miniconda, provided by Anaconda, Inc.</p>
-</div>
-<p>Compared to Anaconda, Miniforge provides more up-to-date packages, and is more user-friendly. Therefore, I recommend using Miniforge for data science projects.</p>
-<div class="tip admonition">
-<p class="admonition-title">To do</p>
-<p>Install the latest version of the Miniforge</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://kirenz.github.io/codelabs/codelabs/miniforge-setup/#0">Miniforge installation tutorial</a></p></li>
-</ul>
-</div>
-</section>
 <section id="anaconda">
-<h2>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this headline">#</a></h2>
-<p>As an alternative to Miniforge, you can also use the open-source <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda Individual Edition</a> distribution which includes Python and the most important data science modules.</p>
+<span id="id2"></span><h2>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this headline">#</a></h2>
+<p>The open-source <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda Individual Edition</a> is one of the easiest ways to get started with data science projects. It already includes Python and the most important data science modules.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Anaconda is a data science toolkit which already includes most of the data science modules we need.</p>
 </div>
+<p>Anaconda’s package manager <code class="docutils literal notranslate"><span class="pre">conda</span></code> makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called virtual environments). <code class="docutils literal notranslate"><span class="pre">conda</span></code> analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2,0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done. Instead of conda, you can also use <code class="docutils literal notranslate"><span class="pre">pip</span></code> (the standard package installer for Python) to install packages. Note that you should only use either conda or pip in one environment.</p>
 <p><em>If you already have Anaconda on your machine, make sure that you use the latest version (in our course, we use Python 3.9 but Python 3.8 is also fine). In your terminal, type <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">--version</span></code> to see which Python version you are using in your Anaconda base environment.</em></p>
 <p><em>You may also uninstall your current Anaconda environment from your machine and install the latest version: here a guide of how to <a class="reference external" href="https://docs.anaconda.com/anaconda/install/uninstall/">uninstall Anaconda</a>.</em></p>
 <div class="tip admonition">
@@ -901,6 +884,24 @@ cookiecutter -c v1 https://github.com/drivendata/cookiecutter-data-science
 <p>A community-based space to find and contribute answers to technical challenges.</p>
 </div>
 <p>The website serves as a platform for users to ask and answer questions, and, through membership and active participation, to vote questions and answers up or down similar to <a class="reference external" href="https://www.reddit.com/">Reddit</a> and edit questions and answers in a fashion similar to a wiki.</p>
+</section>
+<section id="miniforge">
+<span id="id3"></span><h2>Miniforge<a class="headerlink" href="#miniforge" title="Permalink to this headline">#</a></h2>
+<p>As an alternative to Anaconda, you can also use the open-source project <a class="reference external" href="https://github.com/conda-forge/miniforge">Miniforge</a>.</p>
+<p>Miniforge is a small, bootstrap version of the data science platform Anaconda that includes only Python, the open source package management system <a class="reference external" href="https://docs.conda.io/en/latest/">conda</a> and a small number of other useful packages.</p>
+<p>Miniforge also uses Anaconda’s package manager <code class="docutils literal notranslate"><span class="pre">conda</span></code>, which makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called virtual environments).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Miniforge is an community-led alternative to the data science platforms Anaconda and Miniconda, provided by Anaconda, Inc.</p>
+</div>
+<p>Compared to Anaconda, Miniforge provides more up-to-date packages, and is more user-friendly. Therefore, I recommend using Miniforge for data science projects.</p>
+<div class="tip admonition">
+<p class="admonition-title">To do</p>
+<p>Install the latest version of the Miniforge</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://kirenz.github.io/codelabs/codelabs/miniforge-setup/#0">Miniforge installation tutorial</a></p></li>
+</ul>
+</div>
 </section>
 <section id="stay-up-to-data">
 <h2>Stay up to data<a class="headerlink" href="#stay-up-to-data" title="Permalink to this headline">#</a></h2>
