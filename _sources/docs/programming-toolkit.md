@@ -1,15 +1,26 @@
 # Programming toolkit
 
-This section contains an overview about the programming toolkit you will need for our course. Please read all the instructions and complete the tasks listed in the yellow *To do* boxes.
+This section contains an overview about the programming toolkit you will need for our course. 
 
-In particular, you will need to:
+You have two options for participating in the course:
+
+1. Don't install any software and only use your internet browser to access a free Google provided Python-environment called [Colab](colab).
+2. Set up a Python-environemnt on your own machine and install the required software. 
+
+:::{note}
+Although it is feasible to go with option 1, I strongly recommend to set up Python on your own machine. 
+:::
+
+If you choose option 2, you will simply need to (see section ["Tools"](tools)):
 
 1. Install [Anaconda](anaconda) (includes Python and some toolkits)
 2. Install [Visual Studio Code](vscode) (a code editor)
-3. Set up an account at [GitHub](github) (for code version control)
 
+Regardless of the option you choose, please read all the instructions and complete the tasks listed in the following "Fundamentals"-section.
 
-## Python
+## Fundamentals
+
+### Python
 
 Python is an object-oriented language (an object is an entity that contains data along with associated metadata and/or functionality).
 
@@ -21,7 +32,7 @@ Python is an interpreted language. The Python interpreter runs a program by exec
 
 On top of this, there is a broad ecosystem of third-party tools and modules (like Jupyter Notebook) that offer more specialized data science functionality.
 
-## Jupyter Notebook
+### Jupyter Notebook
 
 [Jupyter Notebook](https://jupyter.org/) is an open-source application that allows you to create and share documents that contain code, equations, visualizations and narrative text. 
 
@@ -42,9 +53,10 @@ A notebook is basically a list of cells and the cells contain either
 1. executable code
 1. code output
 
-Note that we will use Jupyter Notebook inside the coding editor Visual Studio Code.
+Note that we will use Jupyter Notebook inside the coding editor Visual Studio Code or Google Colab.
 
-## Colab
+(colab)=
+### Colab
 
 Colaboratory, or “Colab” for short, is a free to use product from Google Research. Colab allows anybody to write and execute python code through the browser, and is especially well suited to perform data analysis and machine learning.
 
@@ -63,7 +75,7 @@ Let`s start your first Colab notebook to get an overview about some basic featur
 - [Colab basic features overview](https://colab.research.google.com/notebooks/basic_features_overview.ipynb)
 ```
 
-## Markdown
+### Markdown
 
 Markdown is one of the world’s most popular markup languages used in data science. Jupyter Notebooks use Markdown to provide an unified authoring framework for data science, combining code, its results, and commentary in Markdown. 
 
@@ -88,8 +100,11 @@ Review this sites to learn more about Markdown:
 - [Interactive 10 minute Markdown tutorial](https://commonmark.org/help/)
 ```
 
+(tools)=
+## Tools
+
 (anaconda)=
-## Anaconda
+### Anaconda
 
 The open-source [Anaconda Individual Edition](https://www.anaconda.com/products/individual) is one of the easiest ways to get started with data science projects. It already includes Python and the most important data science modules. 
 
@@ -157,10 +172,8 @@ Or, if you want to install a specific version
 conda install -c anaconda scikit-learn=1.0.2
 ```
 
-
-
 (vscode)=
-## Visual Studio Code 
+### Visual Studio Code 
 
 Visual Studio Code (also called Code) is a powerful source code editor which runs on your desktop and is available for Windows, macOS and Linux. It comes with a rich ecosystem of extensions for Python and we use them to write our Python code.
 
@@ -206,8 +219,11 @@ More VS Code options:
 
 - Pro tips: [25 VS Code Productivity Tips and Speed Hacks](https://www.youtube.com/watch?v=ifTF3ags0XI)
 
+
+## Optional
+
 (github)=
-## Git and GitHub
+### Git and GitHub
 
 [GitHub](https://github.com/) is a provider of internet hosting for software development and version control using Git. We will use GitHub as a platform for web hosting and collaboration and as our course management system.
 
@@ -249,7 +265,45 @@ Using the SSH protocol, you can connect and authenticate to remote servers and s
 -->
 
 
-## Command-line interface
+(miniforge)=
+## Miniforge
+
+As an alternative to Anaconda, you can also use the open-source project [Miniforge](https://github.com/conda-forge/miniforge).
+
+Miniforge is a small, bootstrap version of the data science platform Anaconda that includes only Python, the open source package management system [conda](https://docs.conda.io/en/latest/) and a small number of other useful packages. 
+
+Miniforge also uses Anaconda's package manager `conda`, which makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called virtual environments).
+
+:::{note}
+Miniforge is an community-led alternative to the data science platforms Anaconda and Miniconda, provided by Anaconda, Inc.
+:::
+
+Compared to Anaconda, Miniforge provides more up-to-date packages, and is more user-friendly. Therefore, I recommend using Miniforge for data science projects.
+
+```{admonition} To do
+:class: tip
+
+Install the latest version of the Miniforge
+
+- [Miniforge installation tutorial](https://kirenz.github.io/codelabs/codelabs/miniforge-setup/#0)
+
+```
+
+## Helpful
+
+### Stackoverflow
+
+[Stackoverflow](https://stackoverflow.com/) is a public platform with a massive collection of coding questions & answers. So whenever you run into issues with your code, Stackoverlow is a great place to find answers!
+
+:::{Note}
+A community-based space to find and contribute answers to technical challenges.
+:::
+
+The website serves as a platform for users to ask and answer questions, and, through membership and active participation, to vote questions and answers up or down similar to [Reddit](https://www.reddit.com/) and edit questions and answers in a fashion similar to a wiki.
+
+
+
+### Command-line interface
 
 Operating systems like Windows and macOS implement a command-line interface (other names for the command line are: cmd, CLI, prompt, console or terminal) in a shell for interactive access to operating system functions or services. 
 
@@ -350,42 +404,6 @@ To start a new project, run this command in the terminal (in the folder you want
 cookiecutter -c v1 https://github.com/drivendata/cookiecutter-data-science
 ```
 -->
-
-## Stackoverflow
-
-[Stackoverflow](https://stackoverflow.com/) is a public platform with a massive collection of coding questions & answers. So whenever you run into issues with your code, Stackoverlow is a great place to find answers!
-
-:::{Note}
-A community-based space to find and contribute answers to technical challenges.
-:::
-
-The website serves as a platform for users to ask and answer questions, and, through membership and active participation, to vote questions and answers up or down similar to [Reddit](https://www.reddit.com/) and edit questions and answers in a fashion similar to a wiki.
-
-
-
-(miniforge)=
-## Miniforge
-
-As an alternative to Anaconda, you can also use the open-source project [Miniforge](https://github.com/conda-forge/miniforge).
-
-Miniforge is a small, bootstrap version of the data science platform Anaconda that includes only Python, the open source package management system [conda](https://docs.conda.io/en/latest/) and a small number of other useful packages. 
-
-Miniforge also uses Anaconda's package manager `conda`, which makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called virtual environments).
-
-:::{note}
-Miniforge is an community-led alternative to the data science platforms Anaconda and Miniconda, provided by Anaconda, Inc.
-:::
-
-Compared to Anaconda, Miniforge provides more up-to-date packages, and is more user-friendly. Therefore, I recommend using Miniforge for data science projects.
-
-```{admonition} To do
-:class: tip
-
-Install the latest version of the Miniforge
-
-- [Miniforge installation tutorial](https://kirenz.github.io/codelabs/codelabs/miniforge-setup/#0)
-
-```
 
 
 ## Stay up to data
