@@ -2,21 +2,13 @@
 
 This section contains an overview about the programming toolkit you will need for our course. 
 
-You have two options for participating in the course:
-
-1. Don't install any software and only use your internet browser to access a free Google provided Python-environment called [Colab](colab).
-2. Set up a Python-environemnt on your own machine and install the required software. 
-
-:::{note}
-Although it is feasible to go with option 1, I strongly recommend to set up Python on your own machine. 
-:::
-
-If you choose option 2, you will simply need to (see section ["Tools"](tools)):
+You will simply need to (we cover this topic in detail in the section ["Tools"](tools)):
 
 1. Install [Anaconda](anaconda) (includes Python and some toolkits)
 2. Install [Visual Studio Code](vscode) (a code editor)
+3. Create an acount at [GitHub](github) (for software development and version control)
 
-Regardless of the option you choose, please read all the instructions and complete the tasks listed in the following "Fundamentals"-section.
+Please read all the instructions and complete the tasks listed in the following two sections "Fundamentals" and "Tools".
 
 ## Fundamentals
 
@@ -99,6 +91,8 @@ Review this sites to learn more about Markdown:
 
 - [Interactive 10 minute Markdown tutorial](https://commonmark.org/help/)
 ```
+
+
 
 (tools)=
 ## Tools
@@ -220,12 +214,10 @@ More VS Code options:
 - Pro tips: [25 VS Code Productivity Tips and Speed Hacks](https://www.youtube.com/watch?v=ifTF3ags0XI)
 
 
-## Optional
-
 (github)=
 ### Git and GitHub
 
-[GitHub](https://github.com/) is a provider of internet hosting for software development and version control using Git. We will use GitHub as a platform for web hosting and collaboration and as our course management system.
+[GitHub](https://github.com/) is a provider of internet hosting for software development and version control using Git. We will use GitHub as a platform for web hosting and collaboration.
 
 :::{note}
 Git is a version control system -- like the “Track Changes” features from Microsoft Word with many more additional features.
@@ -253,6 +245,11 @@ You need a free GitHub-account for our course. Please follow the instructions be
 - [Install GitHub desktop to synchronize your machine with GitHub](https://desktop.github.com/)
 ```
 
+
+
+## Optional
+
+
 <!--
 ### GitHub SSH Key
 
@@ -266,7 +263,7 @@ Using the SSH protocol, you can connect and authenticate to remote servers and s
 
 
 (miniforge)=
-## Miniforge
+### Miniforge
 
 As an alternative to Anaconda, you can also use the open-source project [Miniforge](https://github.com/conda-forge/miniforge).
 
