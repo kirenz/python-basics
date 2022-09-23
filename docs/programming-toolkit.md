@@ -166,6 +166,8 @@ Or, if you want to install a specific version
 conda install -c anaconda scikit-learn=1.0.2
 ```
 
+- [Anaconda Cheat Sheet](https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf) with useful commands.
+
 (vscode)=
 ### Visual Studio Code 
 
