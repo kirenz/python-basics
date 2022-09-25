@@ -14,6 +14,7 @@ Please read all the instructions and complete the tasks listed in the following 
 If you aren't familiar with the terminal, you may want to look at this [short introduction](terminal)
 :::
 
+---
 
 ## Fundamentals
 
@@ -28,6 +29,8 @@ Python is an interpreted language. The Python interpreter runs a program by exec
 :::
 
 On top of this, there is a broad ecosystem of third-party tools and modules (like Jupyter Notebook) that offer more specialized data science functionality.
+
+---
 
 ### Jupyter Notebook
 
@@ -72,6 +75,8 @@ Let`s start your first Colab notebook to get an overview about some basic featur
 - [Colab basic features overview](https://colab.research.google.com/notebooks/basic_features_overview.ipynb)
 ```
 
+---
+
 ### Markdown
 
 Markdown is one of the world’s most popular markup languages used in data science. Jupyter Notebooks use Markdown to provide an unified authoring framework for data science, combining code, its results, and commentary in Markdown. 
@@ -96,6 +101,8 @@ Review this sites to learn more about Markdown:
 
 - [Interactive 10 minute Markdown tutorial](https://commonmark.org/help/)
 ```
+
+---
 
 (tools)=
 ## Tools
@@ -183,6 +190,8 @@ conda install scikit-learn=1.0.2
 
 Finally, take a look at the [Anaconda Cheat Sheet](https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf) which provides a list of useful commands.
 
+---
+
 (vscode)=
 ### Visual Studio Code 
 
@@ -250,6 +259,9 @@ If you have troubles to use Anaconda in Visual Studio Code, follow these instruc
 - [Windows](https://stackoverflow.com/a/61937090/14796848)
 - [Mac](https://stackoverflow.com/a/55203534/14796848)
 
+
+---
+
 (github)=
 ### Git and GitHub
 
@@ -280,6 +292,8 @@ You need a free GitHub-account for our course. Please follow the instructions be
 - Install the [VS Code GitHub extension](https://code.visualstudio.com/docs/editor/github)
 - [Install GitHub desktop to synchronize your machine with GitHub](https://desktop.github.com/)
 ```
+
+---
 
 ## Optional
 
@@ -317,6 +331,7 @@ Install the latest version of the Miniforge
 - [Miniforge installation tutorial](https://kirenz.github.io/codelabs/codelabs/miniforge-setup/#0)
 
 ```
+---
 
 ## Helpful
 
@@ -331,6 +346,8 @@ A community-based space to find and contribute answers to technical challenges.
 
 The website serves as a platform for users to ask and answer questions, and, through membership and active participation, to vote questions and answers up or down similar to [Reddit](https://www.reddit.com/) and edit questions and answers in a fashion similar to a wiki.
 
+
+---
 
 (terminal)=
 ### Command-line interface
@@ -435,6 +452,7 @@ cookiecutter -c v1 https://github.com/drivendata/cookiecutter-data-science
 ```
 -->
 
+---
 
 ## Stay up to data
 
