@@ -153,7 +153,6 @@ After you have installed and updated Anaconda, you can install the modules we ne
 :class: tip
 - Install [GitHub course environments](https://github.com/kirenz/environments)
 - Use the following course environment: env-ds.yml
-
 ```
 
 #### Install or update Modules
@@ -207,9 +206,7 @@ Install VS Code:
 
 ```{admonition} To do
 :class: tip
-
 - [Install Code](https://code.visualstudio.com/)
-
 ```
 
 #### Install extensions
@@ -218,8 +215,9 @@ The features that Visual Studio Code includes out-of-the-box are just the start.
 
 Let's install some important extensions:
 
-```{admonition}To do
+```{admonition} To do
 :class: tip
+
 - [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 - [Jupyter extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) 
 ```
@@ -228,10 +226,10 @@ Let's install some important extensions:
 
 We usually work with Jupyter Notebook files in VS Code:
 
-```{admonition}To do
+```{admonition} To do
 :class: tip
-
 - [How to use Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)
+
 ```
 
 #### Optional tutorials
@@ -283,10 +281,7 @@ You need a free GitHub-account for our course. Please follow the instructions be
 - [Install GitHub desktop to synchronize your machine with GitHub](https://desktop.github.com/)
 ```
 
-
-
 ## Optional
-
 
 <!--
 ### GitHub SSH Key
@@ -298,7 +293,6 @@ Using the SSH protocol, you can connect and authenticate to remote servers and s
 1. [Add a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 1. [Test connection](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection)
 -->
-
 
 (miniforge)=
 ### Miniforge
