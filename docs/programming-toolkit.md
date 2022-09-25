@@ -8,7 +8,7 @@ You will simply need to (we cover this topic in detail in the section ["Tools"](
 2. Install [Visual Studio Code](vscode) (a code editor)
 3. Create an acount at [GitHub](github) (for software development and version control)
 
-Please read all the instructions and complete the tasks listed in the following two sections "Fundamentals" and "Tools".
+Please read all the instructions and complete the tasks listed in the following two sections ("Fundamentals" and "Tools").
 
 ## Fundamentals
 
@@ -100,38 +100,70 @@ Review this sites to learn more about Markdown:
 (anaconda)=
 ### Anaconda
 
+#### Basics
+
 The open-source [Anaconda Individual Edition](https://www.anaconda.com/products/individual) is one of the easiest ways to get started with data science projects. It already includes Python and the most important data science modules. 
 
 :::{note}
 Anaconda is a data science toolkit which already includes most of the data science modules we need.
 :::
 
-Anaconda's package manager `conda` makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called virtual environments). `conda` analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2,0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done. Instead of conda, you can also use `pip` (the standard package installer for Python) to install packages. Note that you should only use either conda or pip in one environment.
+Anaconda's package manager `conda` makes it easy to manage multiple data environments that can be maintained and run separately without interference from each other (in so called virtual environments). `conda` analyses the current environment including everything currently installed, and, together with any version limitations specified (e.g. the user may wish to have TensorFlow version 2,0 or higher), works out how to install a compatible set of dependencies, and shows a warning if this cannot be done. Instead of conda, you can also use `pip` (the standard package installer for Python) to install packages. Note that you should only use either conda or pip in one environment (we usually use conda).
 
-*If you already have Anaconda on your machine, make sure that you use the latest version (in our course, we use Python 3.9 but Python 3.8 is also fine). In your terminal, type `python --version` to see which Python version you are using in your Anaconda base environment.* 
+#### If you already have Anaconda
+
+If you already have Anaconda on your machine, make sure that you use the latest version (in our course, we use Python 3.9). In your terminal, type `python --version` to see which Python version you are using in your Anaconda base environment.
 
 *You may also uninstall your current Anaconda environment from your machine and install the latest version: here a guide of how to [uninstall Anaconda](https://docs.anaconda.com/anaconda/install/uninstall/).*
 
 
+#### Install Anaconda
+
+Install the latest version of the Anaconda Individual Edition:
+
 ```{admonition} To do
 :class: tip
 
-Install the latest version of the Anaconda Individual Edition
-
 - [Anaconda installation](https://www.anaconda.com/products/individual)
 
-- Follow the steps described below
 ```
 
-After you have installed Anaconda, you can install additional modules or update Anaconda by using `conda`:
+After you have installed Anaconda, you can update it. The following commands will update all packages in the default "base" environment to the latest version but will not update Python:
 
-- On *Windows* open the Start menu and open an "Anaconda Command Prompt". 
-- On *macOS* or *Linux* open a terminal window.
-- Usually, the so called `base` environment is already activated (and you can see the word `base` in your terminal). If not, type: 
+```{admonition} To do
+:class: tip
+
+- On *Windows* open the Start menu and open an ["Anaconda Command Prompt"](https://conda.io/projects/conda/en/latest/user-guide/getting-started.html#starting-conda). 
+- On *macOS* or *Linux* open a [terminal window](https://conda.io/projects/conda/en/latest/user-guide/getting-started.html#starting-conda).
+- In your terminal, type: conda update --all
+
+```
+
+Now follow the steps described in the next section.
+
+
+#### Set up environment
+
+After you have installed and updated Anaconda, you can install the modules we need for our course in a new environment. Follow the instructions and install the appropriate course environment:
+
+
+```{admonition} To do
+:class: tip
+- Install [GitHub course environments](https://github.com/kirenz/environments)
+- Use course environment: env-ds.yml
+```
+
+
+
 
 ```bash
 conda activate base
 ```
+
+
+
+
+
 
 Now, take a look at all the modules in your environment:
 
@@ -141,11 +173,6 @@ conda list
 
 Make sure that you use `scikit-learn` in version 1.0.2 or higher. If this is not the case, update Anaconda:
 
-
-- If you want to **update Anaconda** (this will update all packages in the current environment to the latest version but will not update Python), use this command:
-
-```terminal
-conda update --all
 ```
 
 - If you only want to **update specific modules**, use conda update and the name of the module (e.g., scikit-learn)
