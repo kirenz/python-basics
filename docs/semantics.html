@@ -425,6 +425,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas-dataframe">
+   Pandas dataframe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#python-types">
    Python types
   </a>
@@ -611,6 +616,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#variables-of-simple-types">
    Variables of simple types
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas-dataframe">
+   Pandas dataframe
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -933,6 +943,288 @@ y = 10
 <li><p>When we call <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+=</span> <span class="pre">5</span></code>, we are not modifying the value of the 10 object pointed to by x</p></li>
 <li><p>We are rather changing the variable <code class="docutils literal notranslate"><span class="pre">x</span></code> so that it points to a new integer object with value 15.</p></li>
 <li><p>For this reason, the value of y is not affected by the operation.</p></li>
+</ul>
+</section>
+<section id="pandas-dataframe">
+<h2>Pandas dataframe<a class="headerlink" href="#pandas-dataframe" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Note that you need to be careful if you use assign to create a “new” pandas Dataframe</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;lemon&#39;</span> <span class="p">]})</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>apple</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>banana</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>orange</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>lemon</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>We use the Python <code class="docutils literal notranslate"><span class="pre">id()</span></code> function to return the unique identity of the object:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139636211199712
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Now use assign to create <code class="docutils literal notranslate"><span class="pre">df_view</span></code> from <code class="docutils literal notranslate"><span class="pre">df</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_view</span> <span class="o">=</span> <span class="n">df</span>
+<span class="n">df_view</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>apple</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>banana</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>orange</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>lemon</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>Let’s check if <code class="docutils literal notranslate"><span class="pre">df_view</span></code> is the same object as <code class="docutils literal notranslate"><span class="pre">df</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">df_view</span><span class="p">)</span> <span class="o">==</span> <span class="nb">id</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>You can see that they are the same</p></li>
+<li><p>We can verify this by setting the first value (i.e., at index location <code class="docutils literal notranslate"><span class="pre">0,0</span></code>) in <code class="docutils literal notranslate"><span class="pre">df_new</span></code> to <code class="docutils literal notranslate"><span class="pre">99</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_view</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">99</span>
+<span class="n">df_view</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>99</td>
+      <td>apple</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>banana</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>orange</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>lemon</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>The changes will also change <code class="docutils literal notranslate"><span class="pre">df</span></code>, since they both refer to the same object</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>99</td>
+      <td>apple</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>banana</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>orange</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>lemon</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df_view</span></code> is only a “view” (shallow copy) of the original df</p></li>
+<li><p>If you want to avoid this kind of behavior, you need to use <code class="docutils literal notranslate"><span class="pre">.copy()</span></code> to create a “deep” copy of a dataframe:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_copy</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>When <code class="docutils literal notranslate"><span class="pre">deep=True</span></code> (default), a new object will be created with a copy of the calling object’s data and indices</p></li>
+<li><p>Modifications to the data or indices of the copy will not be reflected in the original object</p></li>
 </ul>
 </section>
 <section id="python-types">
@@ -1522,7 +1814,7 @@ Range from 0 to 10 by 2:  [0, 2, 4, 6, 8]
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_numbers</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Add two numbers together</span>
 
 <span class="sd">    Returns</span>
