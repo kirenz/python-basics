@@ -1,8 +1,14 @@
 # Welcome
 
-The goal of this tutorial is to give you a first impression of some important tools and concepts in Python when doing data science or statistics projects. 
+The goal of this tutorial is to give you a first impression of some important tools and concepts in Python when performing data science projects. 
 
-A typical project looks something like this {cite:p}`Wickham2016`: 
+In general, *data science* comprises three distinct and overlapping areas {cite:p}`vanderplas2023`: 
+
+1. The skills of a statistician who knows how to model and summarize datasets (which are growing ever larger).
+2. The skills of a computer scientist who can design and use algorithms to efficiently store, process, and visualize this data. 
+3. The domain expertise—what we might think of as “classical” training in a subject—necessary both to formulate the right questions and to put their answers in contex
+
+A typical data science project looks something like this {cite:p}`Wickham2016`: 
 
 ```{image} ../_static/img/data-science.png
 :alt: datascience
@@ -12,6 +18,8 @@ A typical project looks something like this {cite:p}`Wickham2016`:
 ```
 
 Surrounding all these steps is programming and the usage of different tools like Visual Studio Code, Jupyter Notebooks, Anaconda and GitHub. You’ll use these tools in almost every data science project and this book will give you a short introduction into the most important basics. 
+
+
 
 ---
 
