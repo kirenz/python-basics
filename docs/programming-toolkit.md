@@ -2,7 +2,7 @@
 
 This section contains an overview about the programming toolkit you will need for our course. 
 
-You will simply need to (we cover this topic in detail in the section ["Tools"](tools)):
+You will need to:
 
 1. Install [Anaconda](anaconda) (includes Python and some toolkits)
 2. Install [Visual Studio Code](vscode) (a code editor)
